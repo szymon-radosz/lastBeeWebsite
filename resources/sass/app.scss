@@ -14,3 +14,19 @@
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
+
+.navbar-brand{
+  img{
+    height: 50px;
+  }
+}
+
+.btn{
+  background-color: #3d5fbf;
+  padding: 8px 20px;
+  border: none;
+}
+
+.btn:hover{
+  background-color: #35519e;
+}

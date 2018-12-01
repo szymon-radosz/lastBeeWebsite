@@ -20,8 +20,6 @@ class HomeController extends Controller
     public function homePage(){
         $offers = DB::table('fly4free')->paginate(5);
 
-        //var_dump($offers);
-
         return view('home')->with('offersList', $offers);
     }
 }

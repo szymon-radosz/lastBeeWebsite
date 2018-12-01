@@ -19,7 +19,7 @@ con.query(checkIfTableExists, function (err, result) {
     console.log(result.length);
 
     if(result.length == 0){
-        con.query("CREATE TABLE fly4free (id int NOT NULL AUTO_INCREMENT, title VARCHAR(255), description VARCHAR(255), page_url VARCHAR(255), img_url VARCHAR(255), PRIMARY KEY (id))", function (err, result) {
+        con.query("CREATE TABLE fly4free (id int NOT NULL AUTO_INCREMENT, title VARCHAR(255), description VARCHAR(255), page_url VARCHAR(255), img_url VARCHAR(255), brand VARCHAR(255), PRIMARY KEY (id))", function (err, result) {
             if (err) throw err;
             console.log("Table created");
         });
@@ -39,12 +39,14 @@ requestPromise(url)
         let description = cheerio('.entries > .entry > .entry__content > p > strong', entireWebsiteHtml).eq(i).text();
         let articleUrl = cheerio('.entries > .entry > .media-photo > a', entireWebsiteHtml)[i].attribs.href;
         let imageUrl = cheerio('.entries > .entry > .media-photo > a > img', entireWebsiteHtml)[i].attribs.src;
+        let brand = "fly4freeUS"
 
         let offertObject = {
             offertTitle: title,
             offertDescription: description,
             offertUrl: articleUrl,
-            offertImageUrl: imageUrl
+            offertImageUrl: imageUrl,
+            brand: brand
         };
 
         flyResults.push(offertObject);
@@ -61,7 +63,7 @@ requestPromise(url)
             console.log(result.length);
 
             if (result.length == 0){
-                var sql = "INSERT INTO fly4free (title, description, page_url, img_url) VALUES ('" + singleFlyResult.offertTitle + "', '" + singleFlyResult.offertDescription + "', '" + singleFlyResult.offertUrl + "', '" + singleFlyResult.offertImageUrl + "')";
+                var sql = "INSERT INTO fly4free (title, description, page_url, img_url, brand) VALUES ('" + singleFlyResult.offertTitle + "', '" + singleFlyResult.offertDescription + "', '" + singleFlyResult.offertUrl + "', '" + singleFlyResult.offertImageUrl + "', '" + singleFlyResult.brand + "')";
                 con.query(sql, function (err, result) {
                     if (err) throw err;
                     console.log("record added");
