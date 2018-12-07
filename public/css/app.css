@@ -10494,6 +10494,12 @@ a.text-dark:focus {
   font-size: 12px;
 }
 
+.homePageOfferItem .homePageOfferItemContent .offertDate {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 10px;
+}
+
 .homePageOfferItem .homePageOfferItemContent .homePageOfferItemBrandLogo {
   position: absolute;
   bottom: 5px;

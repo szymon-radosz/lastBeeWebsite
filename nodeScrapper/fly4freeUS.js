@@ -10,7 +10,7 @@ const con = mysql.createConnection({
     database: "lastBee"
 });
 
-var checkIfTableExists = "SHOW TABLES LIKE 'fly4free'";
+var checkIfTableExists = "SHOW TABLES LIKE 'fly4freeUS'";
 console.log(checkIfTableExists);
 
 con.query(checkIfTableExists, function (err, result) {
@@ -19,7 +19,7 @@ con.query(checkIfTableExists, function (err, result) {
     console.log(result.length);
 
     if(result.length == 0){
-        con.query("CREATE TABLE fly4free (id int NOT NULL AUTO_INCREMENT, title VARCHAR(255), description VARCHAR(255), page_url VARCHAR(255), img_url VARCHAR(255), brand VARCHAR(255), PRIMARY KEY (id))", function (err, result) {
+        con.query("CREATE TABLE fly4freeUS (id int NOT NULL AUTO_INCREMENT, title VARCHAR(255), description VARCHAR(255), page_url VARCHAR(255), img_url VARCHAR(255), brand VARCHAR(255), status INT, date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (id))", function (err, result) {
             if (err) throw err;
             console.log("Table created");
         });
@@ -40,20 +40,22 @@ requestPromise(url)
         let articleUrl = cheerio('.entries > .entry > .media-photo > a', entireWebsiteHtml)[i].attribs.href;
         let imageUrl = cheerio('.entries > .entry > .media-photo > a > img', entireWebsiteHtml)[i].attribs.src;
         let brand = "fly4freeUS"
+        let status = 0;
 
         let offertObject = {
             offertTitle: title,
             offertDescription: description,
             offertUrl: articleUrl,
-            offertImageUrl: imageUrl,
-            brand: brand
+            offertImageUrl: `<img src="${imageUrl}" alt="fly4freeUS"/>`,
+            brand: brand,
+            status: status
         };
 
         flyResults.push(offertObject);
     });
 
     flyResults.map(singleFlyResult => {
-        var checkIfRecordExists = "SELECT * FROM fly4free WHERE page_url = '" + singleFlyResult.offertUrl + "' LIMIT 1";
+        var checkIfRecordExists = "SELECT * FROM fly4freeUS WHERE page_url = '" + singleFlyResult.offertUrl + "' LIMIT 1";
 
         console.log(checkIfRecordExists);
 
@@ -63,7 +65,7 @@ requestPromise(url)
             console.log(result.length);
 
             if (result.length == 0){
-                var sql = "INSERT INTO fly4free (title, description, page_url, img_url, brand) VALUES ('" + singleFlyResult.offertTitle + "', '" + singleFlyResult.offertDescription + "', '" + singleFlyResult.offertUrl + "', '" + singleFlyResult.offertImageUrl + "', '" + singleFlyResult.brand + "')";
+                var sql = "INSERT INTO fly4freeUS (title, description, page_url, img_url, brand, status) VALUES ('" + singleFlyResult.offertTitle + "', '" + singleFlyResult.offertDescription + "', '" + singleFlyResult.offertUrl + "', '" + singleFlyResult.offertImageUrl + "', '" + singleFlyResult.brand + "', '" + singleFlyResult.status + "')";
                 con.query(sql, function (err, result) {
                     if (err) throw err;
                     console.log("record added");

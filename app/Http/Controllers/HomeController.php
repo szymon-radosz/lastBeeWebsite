@@ -18,8 +18,9 @@ class HomeController extends Controller
     }
 
     public function homePage(){
-        $offers = DB::table('fly4free')->paginate(5);
+        $fly4freeUS = DB::table('fly4freeUS');
+        $travelpiratesus = DB::table('travelpiratesus')->union($fly4freeUS)->orderBy('date', 'DESC')->paginate(5);
 
-        return view('home')->with('offersList', $offers);
+        return view('home')->with('offersList', $travelpiratesus);
     }
 }
