@@ -1,15 +1,20 @@
 .homePageOfferItemRow{
     margin: 0 !important;
+    height: 100%;
+    position: absolute;
 }
 
 .homePageOfferItem{
     margin-bottom: 30px;
+    min-height: 300px;
+    position: relative;
 
     .homePageOfferItemImage{
         padding: 0;
 
         img{
             width: 100%;
+            height: 100%;
         }
     }
 
@@ -33,7 +38,7 @@
             position: absolute;
             bottom: 5px;
             right: 5px;
-            width: 100px;
+            height: 35px;
         }
 
         .homePageOfferItemBtn{

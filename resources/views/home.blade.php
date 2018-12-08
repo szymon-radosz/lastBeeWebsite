@@ -37,6 +37,8 @@
                                     <p class="offertDate">Added: {{\Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $offer->date)->format('d M, Y')}}</p>
                                     @if($offer->brand == "fly4freeUS")
                                         <img src="/img/fly4free.png" class="homePageOfferItemBrandLogo" />
+                                    @elseif($offer->brand == "travelPiratesUS")
+                                        <img src="/img/travelPiratesLogo.jpg" class="homePageOfferItemBrandLogo" />
                                     @endif
                                 </div>
                             </div>

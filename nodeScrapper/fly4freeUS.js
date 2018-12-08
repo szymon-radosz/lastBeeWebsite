@@ -19,7 +19,7 @@ con.query(checkIfTableExists, function (err, result) {
     console.log(result.length);
 
     if(result.length == 0){
-        con.query("CREATE TABLE fly4freeUS (id int NOT NULL AUTO_INCREMENT, title VARCHAR(255), description VARCHAR(255), page_url VARCHAR(255), img_url VARCHAR(255), brand VARCHAR(255), status INT, date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (id))", function (err, result) {
+        con.query("CREATE TABLE fly4freeUS (id int NOT NULL AUTO_INCREMENT, title VARCHAR(255), description TEXT, page_url VARCHAR(255), img_url TEXT, brand VARCHAR(255), status INT, date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (id))", function (err, result) {
             if (err) throw err;
             console.log("Table created");
         });
