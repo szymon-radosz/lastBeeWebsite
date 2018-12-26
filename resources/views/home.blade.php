@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container homePageContainer">
     <div class="row justify-content-center">
         <div class="col-md-12">
                 <div class="card-body">
@@ -29,7 +29,7 @@
                                                 </a>
                                             @else
                                                 <a href="{{ url('register') }}">
-                                                    <div class="btn btn-primary">Register for free to get access to offers</div>
+                                                    <div class="btn btn-primary">Register for free to get access to offer</div>
                                                 </a>
                                             @endif
                                         </a>
@@ -46,7 +46,7 @@
                     </div>
                 @endforeach
 
-                {{ $offersList->links() }}
+                {{ $offersList->links('vendor.pagination.default') }}
          
             </div>
     </div>

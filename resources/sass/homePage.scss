@@ -1,50 +1,58 @@
-.homePageOfferItemRow{
+.homePageOfferItemRow {
     margin: 0 !important;
     height: 100%;
-    position: absolute;
+    min-height: 300px;
 }
 
-.homePageOfferItem{
+.homePageContainer {
+    .card-body {
+        padding: 0;
+    }
+}
+
+.homePageOfferItem {
     margin-bottom: 30px;
     min-height: 300px;
     position: relative;
+    border-radius: 0.45rem;
 
-    .homePageOfferItemImage{
+    .homePageOfferItemImage {
         padding: 0;
 
-        img{
+        img {
             width: 100%;
             height: 100%;
+            border-radius: 0.45rem 0 0 0.45rem;
         }
     }
 
-    .homePageOfferItemContent{
-        padding: 20px 30px;
+    .homePageOfferItemContent {
+        padding: 20px 30px 55px 30px;
 
-        h2{
+        h2 {
             font-size: 24px;
         }
-        p{
+        p {
             font-size: 12px;
         }
 
-        .offertDate{
+        .offertDate {
             position: absolute;
             bottom: 0;
             margin-bottom: 10px;
         }
 
-        .homePageOfferItemBrandLogo{
+        .homePageOfferItemBrandLogo {
             position: absolute;
             bottom: 5px;
-            right: 5px;
+            right: 20px;
             height: 35px;
         }
 
-        .homePageOfferItemBtn{
+        .homePageOfferItemBtn {
             text-align: center;
 
-            .btn{
+            .btn {
                 min-width: 200px;
                 border-radius: 30px;
             }

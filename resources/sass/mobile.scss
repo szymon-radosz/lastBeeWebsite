@@ -1,0 +1,17 @@
+@media screen and (max-width: 576px) {
+    .homePageOfferItemImage {
+        img {
+            border-radius: 0.45rem 0.45rem 0 0 !important;
+        }
+    }
+
+    .homePageOfferItemContent {
+        padding: 20px 20px 55px 20px !important;
+
+        .homePageOfferItemBtn {
+            .btn {
+                width: 100%;
+            }
+        }
+    }
+}

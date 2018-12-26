@@ -63,6 +63,12 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
+                                <p>By signing up you accept our <a href="{{ url('terms') }}">Terms & conditions</a>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>

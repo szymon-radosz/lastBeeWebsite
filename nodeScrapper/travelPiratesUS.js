@@ -6,8 +6,9 @@ const mysql = require('mysql');
 const con = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "",
-    database: "lastBee"
+    password: "root",
+    database: "lastBee",
+    socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock'
 });
 
 var checkIfTableExists = "SHOW TABLES LIKE 'travelPiratesUS'";

@@ -1,32 +1,36 @@
-
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-
-// Variables
-@import 'variables';
-
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
-
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+@import "variables";
+@import "~bootstrap/scss/bootstrap";
 @import "homePage";
+@import "mobile";
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
 
 .navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
-.navbar-brand{
-  img{
-    width: 150px;
-  }
+.navbar-brand {
+    img {
+        width: 150px;
+    }
 }
 
-.btn{
-  background-color: #3d5fbf;
-  padding: 8px 20px;
-  border: none;
+.btn {
+    background-color: #3d5fbf;
+    padding: 8px 20px;
+    border: none;
+    color: #fff;
+    text-decoration: none;
 }
 
-.btn:hover{
-  background-color: #35519e;
+.btn:hover {
+    background-color: #35519e;
+    color: #fff;
+    text-decoration: none;
 }
