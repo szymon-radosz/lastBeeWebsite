@@ -4,9 +4,9 @@
     return view('home');
 });*/
 
-Route::get('home', 'HomeController@index');
+Route::get('offers', 'OffersController@index');
 Route::get('terms', 'TermsController@index');
-Route::get('/', 'HomeController@homePage');
+Route::get('/', 'HomeController@landingPage');
 
 Auth::routes();
 

@@ -9,7 +9,7 @@
   --blue: #3d5fbf;
   --indigo: #6574cd;
   --purple: #9561e2;
-  --pink: #f66D9b;
+  --pink: #f66d9b;
   --red: #e3342f;
   --orange: #f6993f;
   --yellow: #ffed4a;
@@ -543,7 +543,7 @@ mark,
 
 code {
   font-size: 87.5%;
-  color: #f66D9b;
+  color: #f66d9b;
   word-break: break-word;
 }
 
@@ -10472,15 +10472,112 @@ a.text-dark:focus {
   min-height: 300px;
 }
 
+.homePageContainer {
+  margin: 30px 0 20px 0 !important;
+}
+
 .homePageContainer .card-body {
   padding: 0;
+}
+
+.homePageContainer .offerTitle {
+  padding-bottom: 10px;
+}
+
+.homePageContainer .offerDescription {
+  padding-bottom: 10px;
+}
+
+.homePageContainer .offerListBtn {
+  margin-bottom: 10px;
 }
 
 .homePageOfferItem {
   margin-bottom: 30px;
   min-height: 300px;
   position: relative;
-  border-radius: 0.45rem;
+  border-radius: 6px;
+}
+
+.homePageOfferItem .OfferVoteContainer {
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+  left: 0;
+  width: 70px;
+  height: 95px;
+  border-radius: 0 0 0 6px;
+}
+
+.homePageOfferItem .OfferVoteContainer .imgContainer img {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.homePageOfferItem .OfferVoteContainer .imgContainer img:hover {
+  -webkit-filter: none;
+          filter: none;
+}
+
+.homePageOfferItem .OfferVoteContainer .imgContainer button {
+  padding: 0;
+  border: 0;
+  background-color: #fff;
+}
+
+.homePageOfferItem .OfferVoteContainer .imgContainer button:focus {
+  outline: none;
+}
+
+.homePageOfferItem .OfferVoteContainer p {
+  margin: 0;
+  background-color: #ffbd01;
+  color: #000;
+  text-align: center;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 3px;
+}
+
+.homePageOfferItem .OfferType {
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  left: 0;
+  width: 70px;
+  height: 70px;
+  border-radius: 6px 0 0 0;
+}
+
+.homePageOfferItem .OfferType .imageContainer img {
+  margin: 10px;
+  width: 50px;
+}
+
+.homePageOfferItem .OfferType p {
+  margin: 0;
+  background-color: #ffbd01;
+  color: #000;
+  text-align: center;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 3px;
+}
+
+.homePageOfferItem .OfferTypeFlights {
+  background-color: #005874;
+}
+
+.homePageOfferItem .OfferTypeAccomodation {
+  background-color: #1c819e;
+}
+
+.homePageOfferItem .OfferTypeVacations {
+  background-color: #f3f3f3;
 }
 
 .homePageOfferItem .homePageOfferItemImage {
@@ -10490,7 +10587,7 @@ a.text-dark:focus {
 .homePageOfferItem .homePageOfferItemImage img {
   width: 100%;
   height: 100%;
-  border-radius: 0.45rem 0 0 0.45rem;
+  border-radius: 6px 0 0 6px;
 }
 
 .homePageOfferItem .homePageOfferItemContent {
@@ -10523,6 +10620,9 @@ a.text-dark:focus {
 }
 
 .homePageOfferItem .homePageOfferItemContent .homePageOfferItemBtn .btn {
+  background-color: #ffbd01;
+  color: #000;
+  font-weight: 600;
   min-width: 200px;
   border-radius: 30px;
 }
@@ -10539,6 +10639,389 @@ a.text-dark:focus {
   .homePageOfferItemContent .homePageOfferItemBtn .btn {
     width: 100%;
   }
+}
+
+* {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+.navbar {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.container {
+  width: 100% !important;
+  margin: 0 !important;
+  max-width: none;
+  padding: 0 !important;
+}
+
+.justify-content-center,
+.row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/*.row {
+    margin: 0 !important;
+}*/
+
+.py-4 {
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
+}
+
+.page-item.active .page-link {
+  background-color: #005874;
+  border-color: #005874;
+}
+
+.navbar-brand p {
+  margin: 0;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.navbar-brand p span {
+  color: #ffbd01;
+}
+
+.footer {
+  text-align: center;
+  padding: 30px 0;
+  background-color: #f3f3f3;
+}
+
+.footer .footerCopyright p {
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.footer .footerCopyright .footerSocial .footerSocialOption {
+  background-color: #000;
+  display: inline-block;
+  padding: 10px;
+  margin: 0 3px;
+  width: 44px;
+  border-radius: 30px;
+}
+
+.footer .footerCopyright .footerSocial .footerSocialOption img {
+  width: 22px;
+}
+
+.footer .footerSectionHeader {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.alertInfo {
+  width: 80%;
+  position: fixed;
+  z-index: 20;
+  left: 10%;
+  top: 15px;
+  background: #fff;
+  border: 2px solid #005874;
+  color: #005874;
+}
+
+.alertInfo button span {
+  color: #005874;
+}
+
+.alertInfo button:focus {
+  outline: none;
+}
+
+.homePageContainer .landingSearchSectionHelper {
+  margin: 0 auto;
+  padding-bottom: 15px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.homePageContainer .landingHeaderSection {
+  width: 100%;
+  background-size: cover !important;
+  height: calc(100vh - 55px);
+}
+
+.homePageContainer .landingHeaderSection h1 {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 80%;
+  color: #fff;
+  font-size: 38px;
+  font-weight: 600;
+}
+
+.homePageContainer .landingHeaderSection h1 span {
+  color: #ffbd01;
+  font-weight: 700;
+}
+
+.homePageContainer .landingHeaderSection .landingHeaderSectionBtnSection {
+  position: absolute;
+  bottom: 10vh;
+  left: 50%;
+  bottom: 10%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -10%);
+  text-align: center;
+}
+
+.homePageContainer .landingHeaderSection .landingHeaderSectionBtnSection .loginBtn {
+  background: #1c819e;
+}
+
+.homePageContainer .landingHeaderSection .landingHeaderSectionBtnSection .registerBtn {
+  background: #005874;
+}
+
+.homePageContainer .landingHeaderSection .landingHeaderSectionBtnSection .loginBtn:hover {
+  border: 4px solid #1c819e;
+}
+
+.homePageContainer .landingHeaderSection .landingHeaderSectionBtnSection .registerBtn:hover {
+  border: 4px solid #005874;
+}
+
+.homePageContainer .landingHeaderSection .landingHeaderSectionBtnSection .btn {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  border: 4px solid;
+  min-width: 200px;
+  border-radius: 30px;
+  font-size: 16px;
+  margin: 10px;
+}
+
+.homePageContainer .landingHeaderSection .imageAuthorLink {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: #ababab;
+  font-size: 10px;
+  font-weight: 300;
+}
+
+.homePageContainer .landingHeaderSection .imageAuthorLink a {
+  color: #ababab;
+  font-weight: 400;
+}
+
+.homePageContainer .landingSearchSection {
+  background-color: #fff;
+  padding-bottom: 40px;
+}
+
+.homePageContainer .landingSearchSection .landingSearchSectionHeaderText h2 {
+  text-align: center;
+  padding: 30px 0;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.homePageContainer .landingSearchSection .landingSearchSectionBtnOptions {
+  text-align: center;
+  width: 100%;
+  margin: 0 auto !important;
+}
+
+.homePageContainer .landingSearchSection .landingSearchSectionBtnOptions .landingSearchSectionBtnOptionsContainer {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.homePageContainer .landingSearchSection .landingSearchSectionBtnOptions .landingSearchSectionBtnOptionsContainer .landingSearchOptionIconContainer {
+  display: inline-block !important;
+  border: 3px solid;
+  max-width: 160px !important;
+  margin: 0 15px;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* establish flex container */
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  /* make main axis vertical */
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /* center items vertically, in this case */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.homePageContainer .landingSearchSection .landingSearchSectionBtnOptions .landingSearchSectionBtnOptionsContainer .landingSearchOptionIconContainer img {
+  max-width: 60px;
+}
+
+.homePageContainer .landingSearchSection .landingSearchSectionBtnOptions .landingSearchSectionBtnOptionsContainer .landingSearchOptionIconContainer p {
+  margin: 0;
+  padding-top: 8px;
+}
+
+.homePageContainer .landingSearchSection .landingSearchSectionBtnOptions .landingSearchSectionBtnOptionsContainer .landingSearchOptionIconContainer:hover {
+  border-color: #ffbd01;
+  cursor: pointer;
+}
+
+.homePageContainer .landingSearchSection .landingSearchSectionLocationInput input {
+  max-width: 400px;
+  margin: 0 auto;
+  border: 2px solid;
+}
+
+.homePageContainer .landingSearchSection .landingSearchSectionSearchBtn {
+  text-align: center;
+}
+
+.homePageContainer .landingSearchSection .landingSearchSectionSearchBtn .landingSearchSectionBtn {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-color: #1c819e !important;
+  color: #fff;
+  border: 4px solid #1c819e;
+  background: no-repeat;
+  min-width: 200px;
+  font-size: 16px;
+  margin: 0 10px;
+  min-width: 200px;
+  margin: 0 auto;
+}
+
+.homePageContainer .landingSearchSection .landingSearchSectionSearchBtn .landingSearchSectionBtn:hover {
+  border-radius: 30px;
+}
+
+.homePageContainer .landingHowItWorksSection {
+  background-color: #f3f3f3;
+  padding-bottom: 40px;
+}
+
+.homePageContainer .landingHowItWorksSection .landingHowItWorksSectionHeaderText h2 {
+  text-align: center;
+  padding: 30px 0;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.homePageContainer .landingHowItWorksSection .landingHowItWorksSectionDescriptionText {
+  font-size: 16px;
+  text-align: center;
+}
+
+.homePageContainer .landingHowItWorksSection .landingHowItWorksSectionDescriptionText span {
+  font-weight: 600;
+}
+
+.homePageContainer .landingBestOffersSection {
+  background-color: #fff;
+}
+
+.homePageContainer .landingBestOffersSection .landingBestOffersSectionHeaderText h2 {
+  text-align: center;
+  padding: 30px 0 0px 0;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.homePageContainer .landingBestOffersSection .landingBestOffersSectionHeaderText p {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  padding-bottom: 30px;
+}
+
+.homePageContainer .landingBestOffersSectionRect .row {
+  margin: 0;
+}
+
+.homePageContainer .landingBestOffersSectionRect .landingBestOffersSectionRectCol {
+  padding: 0;
+}
+
+.homePageContainer .landingBestOffersSectionRect .fullLandingBestOffersSectionRect {
+  height: 98%;
+}
+
+.homePageContainer .landingBestOffersSectionRect .halfLandingBestOffersSectionRect,
+.homePageContainer .landingBestOffersSectionRect .quaterLandingBestOffersSectionRect {
+  height: 96%;
+}
+
+.homePageContainer .landingBestOffersSectionRect .fullLandingBestOffersSectionRect,
+.homePageContainer .landingBestOffersSectionRect .halfLandingBestOffersSectionRect,
+.homePageContainer .landingBestOffersSectionRect .quaterLandingBestOffersSectionRect {
+  background-color: #cacaca;
+  margin: 12px 5px;
+  border-radius: 8px;
+  background-size: cover !important;
+  background-size: 100% 100% !important;
+  padding: 20px;
+  color: #fff;
+}
+
+.homePageContainer .landingBestOffersSectionRect .fullLandingBestOffersSectionRect h2,
+.homePageContainer .landingBestOffersSectionRect .halfLandingBestOffersSectionRect h2,
+.homePageContainer .landingBestOffersSectionRect .quaterLandingBestOffersSectionRect h2 {
+  font-weight: 700;
+}
+
+.homePageContainer .landingBestOffersSectionRect .fullLandingBestOffersSectionRect img,
+.homePageContainer .landingBestOffersSectionRect .halfLandingBestOffersSectionRect img,
+.homePageContainer .landingBestOffersSectionRect .quaterLandingBestOffersSectionRect img {
+  width: 30px;
+}
+
+.homePageContainer .landingBestOffersSectionRect .fullLandingBestOffersSectionRect .fullLandingBestOffersSectionRectDesc,
+.homePageContainer .landingBestOffersSectionRect .halfLandingBestOffersSectionRect .fullLandingBestOffersSectionRectDesc,
+.homePageContainer .landingBestOffersSectionRect .quaterLandingBestOffersSectionRect .fullLandingBestOffersSectionRectDesc {
+  padding: 10px 0;
+}
+
+.homePageContainer .landingBestOffersSectionRect .fullLandingBestOffersSectionRect .fullLandingBestOffersSectionVoteCount,
+.homePageContainer .landingBestOffersSectionRect .halfLandingBestOffersSectionRect .fullLandingBestOffersSectionVoteCount,
+.homePageContainer .landingBestOffersSectionRect .quaterLandingBestOffersSectionRect .fullLandingBestOffersSectionVoteCount {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.homePageContainer .landingBestOffersSectionRect .halfLandingBestOffersSectionRect h2 {
+  font-size: 20px;
+}
+
+.homePageContainer .landingBestOffersSectionRect .quaterLandingBestOffersSectionRect h2 {
+  font-size: 18px;
+}
+
+.homePageContainer .landingBestOffersSectionSeeAllText p {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #005874;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.homePageContainer .landingBestOffersSectionSeeAllText p:hover {
+  text-decoration: underline;
+  color: #1c819e;
 }
 
 body,

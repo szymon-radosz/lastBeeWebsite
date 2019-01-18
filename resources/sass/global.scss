@@ -1,0 +1,100 @@
+* {
+    font-family: "Montserrat", sans-serif !important;
+}
+
+.navbar {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.container {
+    width: 100% !important;
+    margin: 0 !important;
+    max-width: none;
+    padding: 0 !important;
+}
+
+.justify-content-center,
+.row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/*.row {
+    margin: 0 !important;
+}*/
+
+.py-4 {
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+}
+
+.page-item.active .page-link {
+    background-color: $darkBlue;
+    border-color: $darkBlue;
+}
+
+.navbar-brand {
+    p {
+        margin: 0;
+        font-weight: 800;
+        font-size: 18px;
+
+        span {
+            color: $darkYellow;
+        }
+    }
+}
+
+.footer {
+    text-align: center;
+    padding: 30px 0;
+    background-color: $gray;
+
+    .footerCopyright {
+        p {
+            font-weight: 800;
+            font-size: 20px;
+        }
+        .footerSocial {
+            .footerSocialOption {
+                background-color: #000;
+                display: inline-block;
+                padding: 10px;
+                margin: 0 3px;
+                width: 44px;
+                border-radius: 30px;
+
+                img {
+                    width: 22px;
+                }
+            }
+        }
+    }
+
+    .footerSectionHeader {
+        font-size: 18px;
+        font-weight: 600;
+    }
+}
+
+.alertInfo {
+    width: 80%;
+    position: fixed;
+    z-index: 20;
+    left: 10%;
+    top: 15px;
+    background: #fff;
+    border: 2px solid #005874;
+    color: #005874;
+
+    button {
+        span {
+            color: #005874;
+        }
+    }
+
+    button:focus {
+        outline: none;
+    }
+}

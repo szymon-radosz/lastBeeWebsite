@@ -18,13 +18,15 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900&amp;subset=latin-ext" rel="stylesheet">
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="/img/logo.png">
+                    <p>last-<span>bee</span>.com</p>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -38,6 +40,11 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/offers') }}">Offers</a>
+                        </li>
+                            
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
@@ -75,6 +82,38 @@
         <main class="py-4">
             @yield('content')
         </main>
+
+        <div class="row footer">
+            <div class="col-sm-3 footerCopyright">
+                <p>last-bee.com</p>
+                <div class="footerSocial">
+                    <div class="footerSocialOption facebook">
+                        <img src="/img/facebook.png" />
+                    </div>
+
+                    <div class="footerSocialOption instagram">
+                        <img src="/img/instagram.png" />
+                    </div>
+
+                    <div class="footerSocialOption twitter">
+                        <img src="/img/twitter.png" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <p class="footerSectionHeader">Offers</p>
+                <p>Offers</p>
+            </div>
+            <div class="col-sm-3">
+                <p class="footerSectionHeader">Website</p>
+                <p>About us</p>
+                <p>Privacy Policy</p>
+            </div>
+            <div class="col-sm-3">
+                <p class="footerSectionHeader">Contact</p>
+                <p>Customer Support</p>
+            </div>
+        </div>
     </div>
 </body>
 </html>
