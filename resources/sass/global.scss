@@ -46,10 +46,32 @@
     }
 }
 
+.pageContainer {
+    min-height: 70vh;
+
+    .pageHeaderTitle {
+        margin-top: 30px;
+
+        h1 {
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+    }
+}
+
 .footer {
     text-align: center;
-    padding: 30px 0;
+    //padding: 30px 0;
     background-color: $gray;
+
+    a {
+        color: #000;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
 
     .footerCopyright {
         p {
@@ -78,7 +100,14 @@
     }
 }
 
+.marginTop {
+    margin-top: 30px;
+}
+
 .alertInfo {
+    -webkit-box-shadow: 0px 0px 26px 1px rgba(209, 209, 209, 1);
+    -moz-box-shadow: 0px 0px 26px 1px rgba(209, 209, 209, 1);
+    box-shadow: 0px 0px 26px 1px rgba(209, 209, 209, 1);
     width: 80%;
     position: fixed;
     z-index: 20;

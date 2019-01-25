@@ -19,6 +19,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    <script type="text/javascript" src="{{ URL::asset('js/landingForm.js') }}"></script>
+
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900&amp;subset=latin-ext" rel="stylesheet">
 </head>
 <body>
@@ -48,11 +50,11 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">Sign In</a>
                             </li>
                             <li class="nav-item">
                                 @if (Route::has('register'))
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">Sign Up</a>
                                 @endif
                             </li>
                         @else
@@ -87,31 +89,36 @@
             <div class="col-sm-3 footerCopyright">
                 <p>last-bee.com</p>
                 <div class="footerSocial">
-                    <div class="footerSocialOption facebook">
-                        <img src="/img/facebook.png" />
-                    </div>
+                    <a href="https://www.facebook.com/lastbeecom" target="_blank">
+                        <div class="footerSocialOption facebook">
+                            <img src="/img/facebook.png" />
+                        </div>
+                    </a>
 
-                    <div class="footerSocialOption instagram">
-                        <img src="/img/instagram.png" />
-                    </div>
+                    
+                    <a href="https://www.instagram.com/lastbeecom" target="_blank">
+                        <div class="footerSocialOption instagram">
+                            <img src="/img/instagram.png" />
+                        </div>
+                    </a>
 
-                    <div class="footerSocialOption twitter">
+                   <!--<div class="footerSocialOption twitter">
                         <img src="/img/twitter.png" />
-                    </div>
+                    </div>-->
                 </div>
             </div>
             <div class="col-sm-3">
                 <p class="footerSectionHeader">Offers</p>
-                <p>Offers</p>
+                <a href="{{ url('/offers') }}"><p>Offers</p></a>
             </div>
             <div class="col-sm-3">
                 <p class="footerSectionHeader">Website</p>
-                <p>About us</p>
-                <p>Privacy Policy</p>
+                <a href="{{ url('/about') }}"><p>About us</p></a>
+                <a href="{{ url('/privacy-policy') }}"><p>Privacy Policy</p></a>
             </div>
             <div class="col-sm-3">
                 <p class="footerSectionHeader">Contact</p>
-                <p>Customer Support</p>
+                <a href="{{ url('/customer-support') }}"><p>Customer Support</p></a>
             </div>
         </div>
     </div>

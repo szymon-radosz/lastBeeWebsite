@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
+<div class="container pageContainer" >
+    <div class="row justify-content-center marginTop">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
@@ -63,12 +63,13 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <p>By signing up you accept our <a href="{{ url('terms') }}">Terms & conditions</a>
+                                <p>Already have an account? <a href="{{ url('login') }}">Sign In</a>
+                                <p>By signing up you accept our <a href="{{ url('privacy-policy') }}">Privacy Policy</a>
                             </div>
                         </div>
                         
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-6 offset-md-4 authButtonPanel">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>

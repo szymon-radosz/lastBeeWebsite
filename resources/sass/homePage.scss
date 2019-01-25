@@ -5,7 +5,7 @@
 }
 
 .homePageContainer {
-    margin: 30px 0 20px 0 !important;
+    // margin: 30px 0 20px 0 !important;
 
     .card-body {
         padding: 0;
@@ -71,6 +71,7 @@
             font-weight: 500;
             font-size: 12px;
             padding: 3px;
+            border-radius: 0 0 0 6px;
         }
     }
 
@@ -139,12 +140,12 @@
             margin-bottom: 10px;
         }
 
-        .homePageOfferItemBrandLogo {
+        /*.homePageOfferItemBrandLogo {
             position: absolute;
             bottom: 5px;
             right: 20px;
             height: 35px;
-        }
+        }*/
 
         .homePageOfferItemBtn {
             text-align: center;

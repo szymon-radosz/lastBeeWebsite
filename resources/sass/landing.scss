@@ -18,7 +18,7 @@
         h1 {
             position: absolute;
             left: 50%;
-            top: 40%;
+            //top: 40%;
             -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
             width: 80%;
@@ -34,8 +34,9 @@
 
         .landingHeaderSectionBtnSection {
             position: absolute;
-            bottom: 10vh;
+            //bottom: 10vh;
             left: 50%;
+            width: 100%;
             bottom: 10%;
             -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -10%);
@@ -86,9 +87,18 @@
         }
     }
 
+    .offersSearchSection {
+        margin-bottom: 30px;
+    }
+
     .landingSearchSection {
         background-color: #fff;
         padding-bottom: 40px;
+        width: 100%;
+
+        form {
+            width: 100%;
+        }
 
         .landingSearchSectionHeaderText {
             h2 {
@@ -104,15 +114,23 @@
             width: 100%;
             margin: 0 auto !important;
 
+            .landingSearchSectionHelper {
+                padding: 0;
+            }
+
             .landingSearchSectionBtnOptionsContainer {
                 width: 100%;
                 margin-bottom: 20px;
 
+                .landingSearchCheckboxes {
+                    visibility: hidden;
+                }
+
                 .landingSearchOptionIconContainer {
                     display: inline-block !important;
-                    border: 3px solid;
-                    max-width: 160px !important;
-                    margin: 0 15px;
+                    border: 2px solid #000;
+                    //max-width: 160px !important;
+                    //margin: 0 15px;
                     border-radius: 10px;
                     display: flex; /* establish flex container */
                     flex-direction: column; /* make main axis vertical */
@@ -139,6 +157,10 @@
                     border-color: $darkYellow;
                     cursor: pointer;
                 }
+
+                .activeLandingRect {
+                    border-color: $darkYellow;
+                }
             }
         }
 
@@ -146,7 +168,7 @@
             input {
                 max-width: 400px;
                 margin: 0 auto;
-                border: 2px solid;
+                border: 2px solid #000;
             }
         }
 
@@ -219,24 +241,56 @@
         .row {
             margin: 0;
         }
+
         .landingBestOffersSectionRectCol {
             padding: 0;
+            //height: 100%;
+        }
+
+        .landingBestOffersSectionRectLeft {
+            padding: 0 5px 0 0;
+        }
+
+        .landingBestOffersSectionRectRight {
+            padding: 0 0 0 5px;
+            //height: 100%;
+
+            /* .landingBestOffersSectionRectCol {
+                height: 100%;
+            }*/
+
+            .landingBestOffersSectionRectRightBigRect {
+                height: 50%;
+            }
+
+            .smallOffersRow {
+                height: 100%;
+                padding-top: 10px;
+            }
+
+            .quaterLandingBestOffersSectionRectLeft {
+                padding-right: 5px;
+            }
+
+            .quaterLandingBestOffersSectionRectRight {
+                padding-left: 5px;
+            }
         }
 
         .fullLandingBestOffersSectionRect {
-            height: 98%;
+            height: 100%;
         }
 
         .halfLandingBestOffersSectionRect,
         .quaterLandingBestOffersSectionRect {
-            height: 96%;
+            height: 100%;
         }
 
         .fullLandingBestOffersSectionRect,
         .halfLandingBestOffersSectionRect,
         .quaterLandingBestOffersSectionRect {
             background-color: #cacaca;
-            margin: 12px 5px;
+            //margin: 12px 5px;
             border-radius: 8px;
             background-size: cover !important;
             background-size: 100% 100% !important;
@@ -269,7 +323,7 @@
 
         .quaterLandingBestOffersSectionRect {
             h2 {
-                font-size: 18px;
+                font-size: 14px;
             }
         }
     }

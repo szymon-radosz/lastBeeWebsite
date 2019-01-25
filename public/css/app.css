@@ -10472,10 +10472,6 @@ a.text-dark:focus {
   min-height: 300px;
 }
 
-.homePageContainer {
-  margin: 30px 0 20px 0 !important;
-}
-
 .homePageContainer .card-body {
   padding: 0;
 }
@@ -10541,6 +10537,7 @@ a.text-dark:focus {
   font-weight: 500;
   font-size: 12px;
   padding: 3px;
+  border-radius: 0 0 0 6px;
 }
 
 .homePageOfferItem .OfferType {
@@ -10592,6 +10589,12 @@ a.text-dark:focus {
 
 .homePageOfferItem .homePageOfferItemContent {
   padding: 20px 30px 55px 30px;
+  /*.homePageOfferItemBrandLogo {
+            position: absolute;
+            bottom: 5px;
+            right: 20px;
+            height: 35px;
+        }*/
 }
 
 .homePageOfferItem .homePageOfferItemContent h2 {
@@ -10606,13 +10609,6 @@ a.text-dark:focus {
   position: absolute;
   bottom: 0;
   margin-bottom: 10px;
-}
-
-.homePageOfferItem .homePageOfferItemContent .homePageOfferItemBrandLogo {
-  position: absolute;
-  bottom: 5px;
-  right: 20px;
-  height: 35px;
 }
 
 .homePageOfferItem .homePageOfferItemContent .homePageOfferItemBtn {
@@ -10638,6 +10634,113 @@ a.text-dark:focus {
 
   .homePageOfferItemContent .homePageOfferItemBtn .btn {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 633px) {
+  .OfferVoteContainer {
+    bottom: unset !important;
+    left: unset !important;
+    top: 0;
+    right: 0;
+    border-radius: 0 6px 0 0 !important;
+  }
+
+  .OfferVoteContainer p {
+    border-radius: 0 !important;
+  }
+
+  .homePageOfferItemBrandLogo {
+    bottom: 13px;
+    height: 25px;
+    position: absolute;
+    right: 20px;
+  }
+
+  .landingSearchOptionIconContainer {
+    max-width: 28% !important;
+    margin: 0 5px;
+  }
+
+  .footer {
+    padding: 15px 0;
+  }
+
+  .footer .footerSocial {
+    margin-bottom: 20px;
+  }
+
+  .landingHeaderSection .col-sm-10 {
+    margin: 0;
+  }
+
+  .landingHeaderSection .col-sm-10 h1 {
+    top: 35%;
+    text-align: center;
+  }
+
+  .landingHowItWorksSection .col-sm-8 {
+    margin: 0;
+  }
+
+  .landingBestOffersSection .landingBestOffersSectionRect {
+    margin: 0;
+  }
+
+  .landingBestOffersSection .landingBestOffersSectionRect .landingBestOffersSectionRectLeft {
+    padding: 0 !important;
+  }
+
+  .landingBestOffersSection .landingBestOffersSectionRect .landingBestOffersSectionRectRight {
+    padding: 0 !important;
+    margin-top: 11px;
+  }
+
+  .landingBestOffersSection .landingBestOffersSectionRect .landingBestOffersSectionRectRight .halfLandingBestOffersSectionRect {
+    height: unset !important;
+  }
+
+  .landingBestOffersSection .landingBestOffersSectionRect .landingBestOffersSectionRectRight .smallOffersRow .quaterLandingBestOffersSectionRectLeft {
+    padding: 0 !important;
+  }
+
+  .landingBestOffersSection .landingBestOffersSectionRect .landingBestOffersSectionRectRight .smallOffersRow .quaterLandingBestOffersSectionRectRight {
+    padding: 0 !important;
+    margin-top: 10px;
+  }
+
+  .authButtonPanel .btn {
+    width: 100%;
+  }
+
+  .authButtonPanel .btn-primary {
+    margin-bottom: 10px;
+  }
+
+  .homePageOfferItemContent .offerListBtn {
+    font-size: 13px;
+  }
+}
+
+@media screen and (min-width: 634px) {
+  .homePageOfferItemBrandLogo {
+    position: absolute;
+    bottom: 5px;
+    right: 20px;
+    height: 35px;
+  }
+
+  .landingSearchOptionIconContainer {
+    max-width: 160px !important;
+    margin: 0 15px;
+  }
+
+  .footer {
+    padding: 30px 0;
+  }
+
+  .landingHeaderSection .col-sm-10 h1 {
+    top: 40%;
   }
 }
 
@@ -10687,10 +10790,31 @@ a.text-dark:focus {
   color: #ffbd01;
 }
 
+.pageContainer {
+  min-height: 70vh;
+}
+
+.pageContainer .pageHeaderTitle {
+  margin-top: 30px;
+}
+
+.pageContainer .pageHeaderTitle h1 {
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
 .footer {
   text-align: center;
-  padding: 30px 0;
   background-color: #f3f3f3;
+}
+
+.footer a {
+  color: #000;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }
 
 .footer .footerCopyright p {
@@ -10716,7 +10840,13 @@ a.text-dark:focus {
   font-weight: 600;
 }
 
+.marginTop {
+  margin-top: 30px;
+}
+
 .alertInfo {
+  -webkit-box-shadow: 0px 0px 26px 1px #d1d1d1;
+  box-shadow: 0px 0px 26px 1px #d1d1d1;
   width: 80%;
   position: fixed;
   z-index: 20;
@@ -10752,7 +10882,6 @@ a.text-dark:focus {
 .homePageContainer .landingHeaderSection h1 {
   position: absolute;
   left: 50%;
-  top: 40%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   width: 80%;
@@ -10768,8 +10897,8 @@ a.text-dark:focus {
 
 .homePageContainer .landingHeaderSection .landingHeaderSectionBtnSection {
   position: absolute;
-  bottom: 10vh;
   left: 50%;
+  width: 100%;
   bottom: 10%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -10%);
@@ -10816,9 +10945,18 @@ a.text-dark:focus {
   font-weight: 400;
 }
 
+.homePageContainer .offersSearchSection {
+  margin-bottom: 30px;
+}
+
 .homePageContainer .landingSearchSection {
   background-color: #fff;
   padding-bottom: 40px;
+  width: 100%;
+}
+
+.homePageContainer .landingSearchSection form {
+  width: 100%;
 }
 
 .homePageContainer .landingSearchSection .landingSearchSectionHeaderText h2 {
@@ -10834,16 +10972,22 @@ a.text-dark:focus {
   margin: 0 auto !important;
 }
 
+.homePageContainer .landingSearchSection .landingSearchSectionBtnOptions .landingSearchSectionHelper {
+  padding: 0;
+}
+
 .homePageContainer .landingSearchSection .landingSearchSectionBtnOptions .landingSearchSectionBtnOptionsContainer {
   width: 100%;
   margin-bottom: 20px;
 }
 
+.homePageContainer .landingSearchSection .landingSearchSectionBtnOptions .landingSearchSectionBtnOptionsContainer .landingSearchCheckboxes {
+  visibility: hidden;
+}
+
 .homePageContainer .landingSearchSection .landingSearchSectionBtnOptions .landingSearchSectionBtnOptionsContainer .landingSearchOptionIconContainer {
   display: inline-block !important;
-  border: 3px solid;
-  max-width: 160px !important;
-  margin: 0 15px;
+  border: 2px solid #000;
   border-radius: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10880,10 +11024,14 @@ a.text-dark:focus {
   cursor: pointer;
 }
 
+.homePageContainer .landingSearchSection .landingSearchSectionBtnOptions .landingSearchSectionBtnOptionsContainer .activeLandingRect {
+  border-color: #ffbd01;
+}
+
 .homePageContainer .landingSearchSection .landingSearchSectionLocationInput input {
   max-width: 400px;
   margin: 0 auto;
-  border: 2px solid;
+  border: 2px solid #000;
 }
 
 .homePageContainer .landingSearchSection .landingSearchSectionSearchBtn {
@@ -10955,20 +11103,47 @@ a.text-dark:focus {
   padding: 0;
 }
 
+.homePageContainer .landingBestOffersSectionRect .landingBestOffersSectionRectLeft {
+  padding: 0 5px 0 0;
+}
+
+.homePageContainer .landingBestOffersSectionRect .landingBestOffersSectionRectRight {
+  padding: 0 0 0 5px;
+  /* .landingBestOffersSectionRectCol {
+                height: 100%;
+            }*/
+}
+
+.homePageContainer .landingBestOffersSectionRect .landingBestOffersSectionRectRight .landingBestOffersSectionRectRightBigRect {
+  height: 50%;
+}
+
+.homePageContainer .landingBestOffersSectionRect .landingBestOffersSectionRectRight .smallOffersRow {
+  height: 100%;
+  padding-top: 10px;
+}
+
+.homePageContainer .landingBestOffersSectionRect .landingBestOffersSectionRectRight .quaterLandingBestOffersSectionRectLeft {
+  padding-right: 5px;
+}
+
+.homePageContainer .landingBestOffersSectionRect .landingBestOffersSectionRectRight .quaterLandingBestOffersSectionRectRight {
+  padding-left: 5px;
+}
+
 .homePageContainer .landingBestOffersSectionRect .fullLandingBestOffersSectionRect {
-  height: 98%;
+  height: 100%;
 }
 
 .homePageContainer .landingBestOffersSectionRect .halfLandingBestOffersSectionRect,
 .homePageContainer .landingBestOffersSectionRect .quaterLandingBestOffersSectionRect {
-  height: 96%;
+  height: 100%;
 }
 
 .homePageContainer .landingBestOffersSectionRect .fullLandingBestOffersSectionRect,
 .homePageContainer .landingBestOffersSectionRect .halfLandingBestOffersSectionRect,
 .homePageContainer .landingBestOffersSectionRect .quaterLandingBestOffersSectionRect {
   background-color: #cacaca;
-  margin: 12px 5px;
   border-radius: 8px;
   background-size: cover !important;
   background-size: 100% 100% !important;
@@ -11006,7 +11181,7 @@ a.text-dark:focus {
 }
 
 .homePageContainer .landingBestOffersSectionRect .quaterLandingBestOffersSectionRect h2 {
-  font-size: 18px;
+  font-size: 14px;
 }
 
 .homePageContainer .landingBestOffersSectionSeeAllText p {

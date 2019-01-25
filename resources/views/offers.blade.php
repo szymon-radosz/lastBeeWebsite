@@ -11,6 +11,62 @@
 
 
 <div class="homePageContainer">
+    <div class="row landingSearchSection offersSearchSection">
+        <div class="col-sm-12 landingSearchSectionHeaderText">
+            <h2 class="">Find offers fit for you</h2>
+        </div>
+
+        {{ Form::open(array('action' => array('OffersController@findOffers'))) }}
+        <div class="row landingSearchSectionBtnOptions">
+            <p class="landingSearchSectionHelper">1. Select offers type/types.</p>
+            <div class="landingSearchSectionBtnOptionsContainer">
+
+                <div class="landingSearchCheckboxes">
+                    {{ Form::checkbox('FlightsCheck', null, null, array('id' => 'FlightsCheckId')) }} 
+                    {{ Form::checkbox('VacationsCheck', null, null, array('id' => 'VacationsCheckId')) }} 
+                    {{ Form::checkbox('HotelsCheck', null, null, array('id' => 'HotelsCheckId')) }} 
+                </div>
+
+                <div class="col-sm-4 landingSearchOptionIconContainer" id="FlightRectLanding">
+                    <div class="landingSearchOptionIconWrapper"> 
+                        <img src="/img/airplane.png" />
+                        <p>Flights</p>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 landingSearchOptionIconContainer" id="VacationsRectLanding">
+                    <div class="landingSearchOptionIconWrapper"> 
+                        <img src="/img/sunset.png"  />
+                        <p>Vacations</p>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 landingSearchOptionIconContainer" id="HotelsRectLanding">
+                    <div class="landingSearchOptionIconWrapper"> 
+                        <img src="/img/hotel.png" />
+                        <p>Hotels</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 landingSearchSectionLocationInput">
+            <p class="landingSearchSectionHelper">2. Write down interesting location.</p>
+            <div class="form-group">
+                <!--<input type="text" class="form-control" id="usr" placeholder="Location">-->
+
+                {{ Form::text('locationInput', null, array('class' => 'form-control', 'placeholder' => 'Location')) }}
+
+            </div>
+        </div>
+
+        <div class="col-sm-12 landingSearchSectionSearchBtn">
+            <p class="landingSearchSectionHelper">3. Search through all offers.</p>
+            <button type="submit" class="btn landingSearchSectionBtn">Search</button>
+        </div>
+        {{ Form::close() }}
+    </div>
+    
     <div class="row justify-content-center">
         <div class="col-sm-10">
 
@@ -47,7 +103,7 @@
                                 </div>
                             {{ Form::close() }}
 
-                            <p>{{count($offer->users)}} votes / id {{$offer->id}}</p>
+                            <p>{{count($offer->users)}} votes</p>
                         </div>
 
                         <div class="row homePageOfferItemRow">
@@ -57,7 +113,7 @@
                             <div class="col-sm-7 homePageOfferItemContent">
                                 <div>
                                     <h2 class="offerTitle">{{$offer->title}}</h2>
-                                    <p class="offerDescription">{{$offer->description}}</p>
+                                    <p class="offerDescription">{{substr($offer->description, 0, 210)}} ...</p>
                                     <div class="homePageOfferItemBtn">
                                             @if (Auth::check())
                                                 <a href={{$offer->page_url}} target="_blank">
@@ -75,6 +131,8 @@
                                         <a href="https://www.fly4free.com/flight-deals" target="_blank"><img src="/img/fly4free.png" class="homePageOfferItemBrandLogo" /></a>
                                     @elseif($offer->brand == "travelPiratesUS")
                                         <a href="https://www.travelpirates.com/flights" target="_blank"><img src="/img/travelPiratesLogo.jpg" class="homePageOfferItemBrandLogo" /></a>
+                                    @elseif($offer->brand == "secretFlyingUS")
+                                        <a href="https://www.secretflying.com" target="_blank"><img src="/img/secretFlyingUS.gif" class="homePageOfferItemBrandLogo" /></a>
                                     @endif
                                 </div>
                             </div>

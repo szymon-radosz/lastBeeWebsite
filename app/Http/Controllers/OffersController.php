@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Offer;
 use Response;
 use Auth;
+use Input;
 
 class OffersController extends Controller
 {
@@ -76,5 +77,53 @@ class OffersController extends Controller
         }else{
             return 1;
         }
+    }
+
+    public function findOffers(Request $request){
+
+        //if checkbox checked then value is 1
+        $FlightsCheck = $request['FlightsCheck'] ? 1 : 0;
+        $VacationsCheck = $request['VacationsCheck'] ? 1 : 0;
+        $HotelsCheck = $request['HotelsCheck'] ? 1 : 0;
+
+        $location = $request['locationInput'];
+        
+
+        //return array($FlightsCheck, $VacationsCheck, $HotelsCheck, $location);
+
+        if($FlightsCheck && $VacationsCheck && $HotelsCheck){
+            $offers = Offer::with('users')
+            ->where('status', 1)
+            ->where('title', 'like', '%' . $location . '%')
+            ->orderBy('created_at', 'DESC')
+            ->paginate(5);
+        }else{
+            $offers = Offer::with('users')
+            ->where('status', 1)
+            ->where('title', 'like', '%' . $location . '%')
+            ->when($FlightsCheck, function ($q) {
+                $q->where('type', '=', 'Flights');
+            })
+            ->when($VacationsCheck, function ($q) {
+                $q->where('type', '=', 'Vacations');
+            })
+            ->when($HotelsCheck, function ($q) {
+                $q->where('type', '=', 'Accomodation');
+            })
+            ->when($FlightsCheck && $VacationsCheck, function ($q) {
+                $q->where('type', '=', 'Flights')->orWhere('type', '=', 'Vacations');
+            })
+            ->when($VacationsCheck && $HotelsCheck, function ($q) {
+                $q->where('type', '=', 'Vacations')->orWhere('type', '=', 'Accomodation');
+            })
+            ->when($FlightsCheck && $HotelsCheck, function ($q) {
+                $q->where('type', '=', 'Flights')->orWhere('type', '=', 'Accomodation');
+            })
+            ->orderBy('created_at', 'DESC')
+            ->paginate(5);
+        }
+        
+
+       return view('offers')->with('offersList', $offers);
     }
 }
