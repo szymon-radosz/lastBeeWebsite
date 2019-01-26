@@ -115,7 +115,7 @@
 
                         <div class="fullLandingBestOffersSectionRect" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{$firstImage[1]}}'); ">
                             <h2>{{$offersList[0]->title}}</h2>
-                            <p class="fullLandingBestOffersSectionRectDesc">{{$offersList[0]->description}}</p>
+                            <p class="fullLandingBestOffersSectionRectDesc">{{substr($offersList[0]->description, 0, 300)}} ...</p>
                             <img src="/img/heart.png" class="fullLandingBestOffersSectionVoteIcon" />
                             <p class="fullLandingBestOffersSectionVoteCount">{{$offersList[0]->users_count}}</p>
                         </div>
