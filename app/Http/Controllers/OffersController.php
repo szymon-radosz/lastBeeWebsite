@@ -7,6 +7,7 @@ use App\Offer;
 use Response;
 use Auth;
 use Input;
+use Redirect;
 
 class OffersController extends Controller
 {
@@ -86,44 +87,118 @@ class OffersController extends Controller
         $VacationsCheck = $request['VacationsCheck'] ? 1 : 0;
         $HotelsCheck = $request['HotelsCheck'] ? 1 : 0;
 
-        $location = $request['locationInput'];
-        
+        $location = $request['locationInput'] ? $request['locationInput'] : 0;
 
-        //return array($FlightsCheck, $VacationsCheck, $HotelsCheck, $location);
+        if(!$location && !$FlightsCheck && !$VacationsCheck && !$HotelsCheck){
+            return Redirect::to('offers');
+        } else{
+            return Redirect::to('offers/' . $location . '/' . $FlightsCheck . '/' . $VacationsCheck . '/' . $HotelsCheck);
+        }
+    }
 
-        if($FlightsCheck && $VacationsCheck && $HotelsCheck){
+    public function OffersWithParameters($location, $FlightsCheck, $VacationsCheck, $HotelsCheck){
+       
+        //if location exists
+        if($location != '0' && $FlightsCheck && !$VacationsCheck && !$HotelsCheck){
             $offers = Offer::with('users')
-            ->where('status', 1)
-            ->where('title', 'like', '%' . $location . '%')
-            ->orderBy('created_at', 'DESC')
-            ->paginate(5);
-        }else{
+                                ->where([['status', 1], ['title', 'like', '%' . $location . '%'], ['type', 'Flights']])
+                                ->orderBy('created_at', 'DESC')
+                                ->paginate(5);
+
+        } else if($location != '0' && !$FlightsCheck && $VacationsCheck && !$HotelsCheck){
             $offers = Offer::with('users')
-            ->where('status', 1)
-            ->where('title', 'like', '%' . $location . '%')
-            ->when($FlightsCheck, function ($q) {
-                $q->where('type', '=', 'Flights');
-            })
-            ->when($VacationsCheck, function ($q) {
-                $q->where('type', '=', 'Vacations');
-            })
-            ->when($HotelsCheck, function ($q) {
-                $q->where('type', '=', 'Accomodation');
-            })
-            ->when($FlightsCheck && $VacationsCheck, function ($q) {
-                $q->where('type', '=', 'Flights')->orWhere('type', '=', 'Vacations');
-            })
-            ->when($VacationsCheck && $HotelsCheck, function ($q) {
-                $q->where('type', '=', 'Vacations')->orWhere('type', '=', 'Accomodation');
-            })
-            ->when($FlightsCheck && $HotelsCheck, function ($q) {
-                $q->where('type', '=', 'Flights')->orWhere('type', '=', 'Accomodation');
-            })
-            ->orderBy('created_at', 'DESC')
-            ->paginate(5);
+                                ->where([['status', 1], ['title', 'like', '%' . $location . '%'], ['type', 'Vacations']])
+                                ->orderBy('created_at', 'DESC')
+                                ->paginate(5);
+
+        }else if($location != '0' && !$FlightsCheck && !$VacationsCheck && $HotelsCheck){
+            $offers = Offer::with('users')
+                                ->where([['status', 1], ['title', 'like', '%' . $location . '%'], ['type', 'Accomodation']])
+                                ->orderBy('created_at', 'DESC')
+                                ->paginate(5);
+
+        }else if($location != '0' && $FlightsCheck && $VacationsCheck && !$HotelsCheck){
+            $offers = Offer::with('users')
+                                ->where([['status', 1], ['title', 'like', '%' . $location . '%'], ['type', 'Flights']])
+                                ->orWhere([['status', 1], ['title', 'like', '%' . $location . '%'], ['type', 'Vacations']])
+                                ->orderBy('created_at', 'DESC')
+                                ->paginate(5);
+
+        }else if($location != '0' && $FlightsCheck && !$VacationsCheck && $HotelsCheck){
+            $offers = Offer::with('users')
+                                ->where([['status', 1], ['title', 'like', '%' . $location . '%'], ['type', 'Flights']])
+                                ->orWhere([['status', 1], ['title', 'like', '%' . $location . '%'], ['type', 'Accomodation']])
+                                ->orderBy('created_at', 'DESC')
+                                ->paginate(5);
+        }
+        else if($location != '0' && !$FlightsCheck && $VacationsCheck && $HotelsCheck){
+            $offers = Offer::with('users')
+                                ->where([['status', 1], ['title', 'like', '%' . $location . '%'], ['type', 'Vacations']])
+                                ->orWhere([['status', 1], ['title', 'like', '%' . $location . '%'], ['type', 'Accomodation']])
+                                ->orderBy('created_at', 'DESC')
+                                ->paginate(5);
+        }else if($location != '0' && $FlightsCheck && $VacationsCheck && $HotelsCheck){
+            $offers = Offer::with('users')
+                                ->where([['status', 1], ['title', 'like', '%' . $location . '%']])
+                                ->orderBy('created_at', 'DESC')
+                                ->paginate(5);
+        }else if($location != '0' && !$FlightsCheck && !$VacationsCheck && !$HotelsCheck){
+            $offers = Offer::with('users')
+                                ->where([['status', 1], ['title', 'like', '%' . $location . '%']])
+                                ->orderBy('created_at', 'DESC')
+                                ->paginate(5);
         }
         
+        //if location not exists
+        else if($location == '0' && $FlightsCheck && !$VacationsCheck && !$HotelsCheck){
+            $offers = Offer::with('users')
+                                ->where([['status', 1],  ['type', 'Flights']])
+                                ->orderBy('created_at', 'DESC')
+                                ->paginate(5);
+
+        } else if($location == '0' && !$FlightsCheck && $VacationsCheck && !$HotelsCheck){
+            $offers = Offer::with('users')
+                                ->where([['status', 1],  ['type', 'Vacations']])
+                                ->orderBy('created_at', 'DESC')
+                                ->paginate(5);
+
+        }else if($location == '0' && !$FlightsCheck && !$VacationsCheck && $HotelsCheck){
+            $offers = Offer::with('users')
+                                ->where([['status', 1], ['type', 'Accomodation']])
+                                ->orderBy('created_at', 'DESC')
+                                ->paginate(5);
+
+        }else if($location == '0' && $FlightsCheck && $VacationsCheck && !$HotelsCheck){
+            $offers = Offer::with('users')
+                                ->where([['status', 1],  ['type', 'Flights']])
+                                ->orWhere([['status', 1], ['type', 'Vacations']])
+                                ->orderBy('created_at', 'DESC')
+                                ->paginate(5);
+
+        }else if($location == '0' && $FlightsCheck && !$VacationsCheck && $HotelsCheck){
+            $offers = Offer::with('users')
+                                ->where([['status', 1],  ['type', 'Flights']])
+                                ->orWhere([['status', 1],  ['type', 'Accomodation']])
+                                ->orderBy('created_at', 'DESC')
+                                ->paginate(5);
+        }
+        else if($location == '0' && !$FlightsCheck && $VacationsCheck && $HotelsCheck){
+            $offers = Offer::with('users')
+                                ->where([['status', 1],  ['type', 'Vacations']])
+                                ->orWhere([['status', 1],  ['type', 'Accomodation']])
+                                ->orderBy('created_at', 'DESC')
+                                ->paginate(5);
+        }else if($location == '0' && $FlightsCheck && $VacationsCheck && $HotelsCheck){
+            $offers = Offer::with('users')
+                                ->orderBy('created_at', 'DESC')
+                                ->paginate(5);
+        }else if($location == '0' && !$FlightsCheck && !$VacationsCheck && !$HotelsCheck){
+            $offers = Offer::with('users')
+                                ->orderBy('created_at', 'DESC')
+                                ->paginate(5);
+        }
 
        return view('offers')->with('offersList', $offers);
     }
+
 }

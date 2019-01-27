@@ -18,6 +18,9 @@ Route::get('/', 'HomeController@landingPage');
 
 Route::post('/offers', 'OffersController@findOffers');
 
+//Route::get('offers/{location}', 'OffersController@OffersWithLocation');
+Route::get('offers/{locationInput}/{FlightsCheck}/{VacationsCheck}/{HotelsCheck}', 'OffersController@OffersWithParameters');
+
 Auth::routes();
 
 
