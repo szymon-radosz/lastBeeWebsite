@@ -77,21 +77,21 @@
                                 <div class="imageContainer">
                                     <img src="/img/airplane-white.png" />
                                 </div>
-                                <p>Flights</p>
+                                <a href="{{ env('APP_ADDRESS') }}/offers/0/1/0/0" target="_blank" title="Show Flights Offers"><p>Flights</p></a>
                             </div>
                         @elseif($offer->type == "Vacations")
                             <div class="OfferType OfferTypeVacations">
                                 <div class="imageContainer">
                                     <img src="/img/sunset.png" />
                                 </div>
-                                <p>Vacations</p>
+                                <a href="{{ env('APP_ADDRESS') }}/offers/0/0/1/0" target="_blank" title="Show Vacations Offers"><p>Vacations</p></a>
                             </div>
                         @elseif($offer->type == "Accomodation")
                             <div class="OfferType OfferTypeAccomodation">
                                 <div class="imageContainer">
                                     <img src="/img/hotel-white.png" />
                                 </div>
-                                <p>Hotels</p>
+                                <a href="{{ env('APP_ADDRESS') }}/offers/0/0/0/1" target="_blank" title="Show Hotels Offers"><p>Hotels</p></a>
                             </div>
                         @endif
 
@@ -99,7 +99,7 @@
 
                             {{ Form::open(array('action' => array('VotesController@store', 'vote_id' => $offer->id))) }}
                                 <div class="imgContainer">
-                                    <button type="submit"><img src="/img/heart.png" /></button>
+                                    <button type="submit" title="Vote for that offer"><img src="/img/heart.png" /></button>
                                 </div>
                             {{ Form::close() }}
 
@@ -112,15 +112,17 @@
                             </div>
                             <div class="col-sm-7 homePageOfferItemContent">
                                 <div>
-                                    <h2 class="offerTitle">{{$offer->title}}</h2>
+                                    <a href={{$offer->page_url}} target="_blank" title="Show More Details">
+                                        <h2 class="offerTitle" onclick="location.href='{{ env('APP_ADDRESS') }}/offers/{{ substr($offer->title, 0, 20) }}/1/1/1' ;">{{$offer->title}}</h2>
+                                    </a>
                                     <p class="offerDescription">{{substr($offer->description, 0, 210)}} ...</p>
                                     <div class="homePageOfferItemBtn">
                                             @if (Auth::check())
-                                                <a href={{$offer->page_url}} target="_blank">
-                                                    <div class="btn btn-primary">Visit offer</div>
+                                                <a href={{$offer->page_url}} target="_blank" title="Show More Details">
+                                                    <div class="btn btn-primary" onclick="location.href='{{ env('APP_ADDRESS') }}/offers/{{ substr($offer->title, 0, 20) }}/1/1/1' ;">Visit offer</div>
                                                 </a>
                                             @else
-                                                <a href="{{ url('register') }}">
+                                                <a href="{{ url('register') }}" title="Register for free to get access to offer">
                                                     <div class="btn btn-primary offerListBtn">Register for free to get access to offer</div>
                                                 </a>
                                             @endif
@@ -128,11 +130,11 @@
                                     </div>
                                     <p class="offertDate">Added: {{-- date('Y-m-d H:i:s', strtotime($offer->created_at)) --}} {{ date('d M, Y', strtotime($offer->created_at)) }} </p>
                                     @if($offer->brand == "fly4freeUS")
-                                        <a href="https://www.fly4free.com/flight-deals" target="_blank"><img src="/img/fly4free.png" class="homePageOfferItemBrandLogo" /></a>
+                                        <a href="https://www.fly4free.com/flight-deals" target="_blank" title="Visit author website"><img src="/img/fly4free.png" class="homePageOfferItemBrandLogo" /></a>
                                     @elseif($offer->brand == "travelPiratesUS")
-                                        <a href="https://www.travelpirates.com/flights" target="_blank"><img src="/img/travelPiratesLogo.jpg" class="homePageOfferItemBrandLogo" /></a>
+                                        <a href="https://www.travelpirates.com/flights" target="_blank" title="Visit author website"><img src="/img/travelPiratesLogo.jpg" class="homePageOfferItemBrandLogo" /></a>
                                     @elseif($offer->brand == "secretFlyingUS")
-                                        <a href="https://www.secretflying.com" target="_blank"><img src="/img/secretFlyingUS.gif" class="homePageOfferItemBrandLogo" /></a>
+                                        <a href="https://www.secretflying.com" target="_blank" title="Visit author website"><img src="/img/secretFlyingUS.gif" class="homePageOfferItemBrandLogo" /></a>
                                     @endif
                                 </div>
                             </div>

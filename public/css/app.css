@@ -11099,6 +11099,10 @@ a.text-dark:focus {
   margin: 0;
 }
 
+.homePageContainer .landingBestOffersSectionRect a {
+  color: #fff;
+}
+
 .homePageContainer .landingBestOffersSectionRect .landingBestOffersSectionRectCol {
   padding: 0;
 }
@@ -11154,7 +11158,7 @@ a.text-dark:focus {
 .homePageContainer .landingBestOffersSectionRect .fullLandingBestOffersSectionRect h2,
 .homePageContainer .landingBestOffersSectionRect .halfLandingBestOffersSectionRect h2,
 .homePageContainer .landingBestOffersSectionRect .quaterLandingBestOffersSectionRect h2 {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .homePageContainer .landingBestOffersSectionRect .fullLandingBestOffersSectionRect img,
