@@ -11,14 +11,17 @@
     gtag('config', 'UA-66630077-2');
     </script>
 
-
     <meta charset="utf-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>One place, all travel offers you need. Absolutely for free.</title>
+    <title>One place, all travel offers you need. Cheap flights, cheap vacations, cheap hotels. Absolutely for free.</title>
+
+    <meta name="description" content="Find best travel offers, cheap flights, cheap vacation, cheap hotels in one place. Best US travel offers.">
+    <meta name="keywords" content="hotels,cheap flights,flights,airline tickets,plane tickets,cheap airline tickets,cheap airfare,travelling,travel,vacations">
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
