@@ -28,6 +28,8 @@ class OffersController extends Controller
         //$country = $request->country;
         $type = $request->type;
         $status = $request->status;
+        $price = $request->price;
+        $currency = $request->currency;
 
         $offer = Offer::find($id)
             ->update([
@@ -38,7 +40,9 @@ class OffersController extends Controller
                 'brand' => $brand, 
                 //'country' => $country, 
                 'type' => $type,
-                'status' => (int)$status
+                'status' => (int)$status,
+                'price' => (int)$price,
+                'currency' => $currency
             ]);
 
         return Response::json($offer);
