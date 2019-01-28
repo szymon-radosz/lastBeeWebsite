@@ -112,9 +112,13 @@
                             </div>
                             <div class="col-sm-7 homePageOfferItemContent">
                                 <div>
-                                    <a href={{$offer->page_url}} target="_blank" title="Show More Details">
-                                        <h2 class="offerTitle" onclick="location.href='{{ env('APP_ADDRESS') }}/offers/{{ substr($offer->title, 0, 20) }}/1/1/1' ;">{{$offer->title}}</h2>
-                                    </a>
+                                    @if (Auth::check())
+                                        <a href={{$offer->page_url}} target="_blank" title="Show More Details">
+                                            <h2 class="offerTitle" onclick="location.href='{{ env('APP_ADDRESS') }}/offers/{{ substr($offer->title, 0, 20) }}/1/1/1' ;">{{$offer->title}}</h2>
+                                        </a>
+                                    @else 
+                                        <h2 class="offerTitle">{{$offer->title}}</h2>
+                                    @endif
                                     <p class="offerDescription">{{substr($offer->description, 0, 210)}} ...</p>
                                     <div class="homePageOfferItemBtn">
                                             @if (Auth::check())

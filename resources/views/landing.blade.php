@@ -114,9 +114,15 @@
                         @endphp
 
                         <div class="fullLandingBestOffersSectionRect" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{$firstImage[1]}}'); ">
-                            <a href="{{$offersList[0]->page_url}}" target="_blank" title="Show More Details">    
-                                <h2 onclick="location.href='{{ env('APP_ADDRESS') }}/offers/{{ substr($offersList[0]->title, 0, 20) }}/1/1/1' ;">{{$offersList[0]->title}}</h2>
-                            </a>
+                            
+                            @if (Auth::check())
+                                <a href="{{$offersList[0]->page_url}}" target="_blank" title="Show More Details">    
+                                    <h2 onclick="location.href='{{ env('APP_ADDRESS') }}/offers/{{ substr($offersList[0]->title, 0, 20) }}/1/1/1' ;">{{$offersList[0]->title}}</h2>
+                                </a>
+                            @else
+                                <h2>{{$offersList[0]->title}}</h2>
+                            @endif
+
                             <p class="fullLandingBestOffersSectionRectDesc">{{substr($offersList[0]->description, 0, 300)}} ...</p>
                             <a href="{{ env('APP_ADDRESS') }}/offers/{{ substr($offersList[0]->title, 0, 20) }}/1/1/1" target="_blank" title="Vote for that offer">
                                 <img src="/img/heart.png" class="fullLandingBestOffersSectionVoteIcon" />
@@ -135,9 +141,15 @@
                                 @endphp
 
                                 <div class="halfLandingBestOffersSectionRect" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{$secondImage[1]}}'); ">
-                                    <a href="{{$offersList[1]->page_url}}" target="_blank" title="Show More Details"> 
-                                        <h2 onclick="location.href='{{ env('APP_ADDRESS') }}/offers/{{ substr($offersList[1]->title, 0, 20) }}/1/1/1' ;">{{$offersList[1]->title}}</h2>
-                                    </a>
+                
+                                    @if (Auth::check())
+                                        <a href="{{$offersList[0]->page_url}}" target="_blank" title="Show More Details">    
+                                            <h2 onclick="location.href='{{ env('APP_ADDRESS') }}/offers/{{ substr($offersList[1]->title, 0, 20) }}/1/1/1' ;">{{$offersList[1]->title}}</h2>
+                                        </a>
+                                    @else
+                                        <h2>{{$offersList[1]->title}}</h2>
+                                    @endif
+
                                     <a href="{{ env('APP_ADDRESS') }}/offers/{{ substr($offersList[1]->title, 0, 20) }}/1/1/1" target="_blank" title="Vote for that offer">
                                         <img src="/img/heart.png" class="fullLandingBestOffersSectionVoteIcon" />
                                     </a>
@@ -153,9 +165,15 @@
                                     @endphp
 
                                     <div class="quaterLandingBestOffersSectionRect" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{$thirdImage[1]}}'); ">
-                                        <a href="{{$offersList[2]->page_url}}" target="_blank" title="Show More Details">     
-                                            <h2 onclick="location.href='{{ env('APP_ADDRESS') }}/offers/{{ substr($offersList[2]->title, 0, 20) }}/1/1/1' ;">{{$offersList[2]->title}}</h2>
-                                        </a>
+                                        
+                                        @if (Auth::check())
+                                            <a href="{{$offersList[2]->page_url}}" target="_blank" title="Show More Details">    
+                                                <h2 onclick="location.href='{{ env('APP_ADDRESS') }}/offers/{{ substr($offersList[2]->title, 0, 20) }}/1/1/1' ;">{{$offersList[2]->title}}</h2>
+                                            </a>
+                                        @else
+                                            <h2>{{$offersList[2]->title}}</h2>
+                                        @endif
+
                                         <a href="{{ env('APP_ADDRESS') }}/offers/{{ substr($offersList[2]->title, 0, 20) }}/1/1/1" target="_blank" title="Vote for that offer">
                                             <img src="/img/heart.png" class="fullLandingBestOffersSectionVoteIcon" />
                                         </a>
@@ -171,9 +189,15 @@
                                     @endphp
 
                                     <div class="quaterLandingBestOffersSectionRect " style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{$fourthImage[1]}}'); ">
-                                        <a href="{{$offersList[3]->page_url}}" target="_blank" title="Show More Details">     
-                                            <h2 onclick="location.href='{{ env('APP_ADDRESS') }}/offers/{{ substr($offersList[3]->title, 0, 20) }}/1/1/1' ;">{{$offersList[3]->title}}</h2>
-                                        </a>
+                                
+                                        @if (Auth::check())
+                                            <a href="{{$offersList[3]->page_url}}" target="_blank" title="Show More Details">    
+                                                <h2 onclick="location.href='{{ env('APP_ADDRESS') }}/offers/{{ substr($offersList[3]->title, 0, 20) }}/1/1/1' ;">{{$offersList[3]->title}}</h2>
+                                            </a>
+                                        @else
+                                            <h2>{{$offersList[3]->title}}</h2>
+                                        @endif
+
                                         <a href="{{ env('APP_ADDRESS') }}/offers/{{ substr($offersList[3]->title, 0, 20) }}/1/1/1" target="_blank" title="Vote for that offer">
                                             <img src="/img/heart.png" class="fullLandingBestOffersSectionVoteIcon" />
                                         </a>
