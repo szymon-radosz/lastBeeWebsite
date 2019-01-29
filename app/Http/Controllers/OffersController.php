@@ -19,6 +19,7 @@ class OffersController extends Controller
     }
 
     public function updateOffer(Request $request){
+        var_dump($request);
         $id = $request->id;
         $title = $request->title;
         $description = $request->description;
@@ -30,6 +31,7 @@ class OffersController extends Controller
         $status = $request->status;
         $price = $request->price;
         $currency = $request->currency;
+        $confirmed_brand = $request->confirmed_brand;
 
         $offer = Offer::find($id)
             ->update([
@@ -42,7 +44,8 @@ class OffersController extends Controller
                 'type' => $type,
                 'status' => (int)$status,
                 'price' => (int)$price,
-                'currency' => $currency
+                'currency' => $currency,
+                'confirmed_brand' => $confirmed_brand
             ]);
 
         return Response::json($offer);
@@ -58,6 +61,7 @@ class OffersController extends Controller
         $country = $request->country;
         $type = $request->type;
         $status = $request->status;
+        $confirmed_brand = $request->confirmed_brand;
 
         $checkIfOfferExists = Offer::where('page_url', '=', $page_url)->first();
 
@@ -75,6 +79,7 @@ class OffersController extends Controller
             $offer->country = $country;
             $offer->type = $type;
             $offer->status = $status;
+            $offer->confirmed_brand = $confirmed_brand;
     
             $offer->save();
     
