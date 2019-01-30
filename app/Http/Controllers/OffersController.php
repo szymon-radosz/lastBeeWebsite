@@ -19,7 +19,7 @@ class OffersController extends Controller
     }
 
     public function updateOffer(Request $request){
-        var_dump($request);
+        
         $id = $request->id;
         $title = $request->title;
         $description = $request->description;

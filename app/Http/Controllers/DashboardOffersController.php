@@ -9,7 +9,7 @@ use Response;
 class DashboardOffersController extends Controller
 {
     public function index(){
-        $offers = Offer::paginate(100);
+        $offers = Offer::paginate(20);
 
         return $offers;
     }
