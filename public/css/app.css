@@ -10489,7 +10489,8 @@ a.text-dark:focus {
 }
 
 .homePageOfferItem {
-  margin-bottom: 30px;
+  max-width: 1000px;
+  margin: 0 auto 30px auto;
   min-height: 300px;
   position: relative;
   border-radius: 6px;
@@ -10788,6 +10789,11 @@ a.text-dark:focus {
 
 .navbar-brand p span {
   color: #ffbd01;
+}
+
+.pagination {
+  max-width: 1000px;
+  margin: 0 auto 20px auto;
 }
 
 .pageContainer {
