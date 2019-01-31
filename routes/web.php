@@ -17,6 +17,8 @@ Route::get('customer-support', 'SupportController@index');
 Route::get('/', 'HomeController@landingPage');
 
 Route::post('/offers', 'OffersController@findOffers');
+Route::post('/paginatorPageResults', 'OffersController@paginatorPageResults');
+
 
 //Route::get('offers/{location}', 'OffersController@OffersWithLocation');
 Route::get('offers/{locationInput}/{FlightsCheck}/{VacationsCheck}/{HotelsCheck}', 'OffersController@OffersWithParameters');

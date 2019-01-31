@@ -10724,6 +10724,10 @@ a.text-dark:focus {
 }
 
 @media screen and (min-width: 634px) {
+  .pagination {
+    float: left;
+  }
+
   .homePageOfferItemBrandLogo {
     position: absolute;
     bottom: 5px;
@@ -10791,9 +10795,48 @@ a.text-dark:focus {
   color: #ffbd01;
 }
 
+.goToPageForm .goToPageInput {
+  float: left;
+}
+
+.goToPageForm .goToPageInput input {
+  height: 35px !important;
+  border-radius: 0 !important;
+  max-width: 134px;
+}
+
+.goToPageForm .paginationSearchBtn {
+  height: 35px;
+  vertical-align: top;
+  border-radius: 0;
+  background-color: #005874;
+  font-size: 12px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.goToPageForm .paginationSearchBtn:hover {
+  background-color: #1c819e;
+}
+
 .pagination {
   max-width: 1000px;
   margin: 0 auto 20px auto;
+}
+
+.pagination .page-link {
+  height: 35px;
+  padding: 10px 8px;
+}
+
+.pagination .page-item,
+.pagination .page-link {
+  border-radius: 0 !important;
+  line-height: 15px;
+}
+
+.pagination .paginationLastTab {
+  margin-right: 30px;
 }
 
 .pageContainer {

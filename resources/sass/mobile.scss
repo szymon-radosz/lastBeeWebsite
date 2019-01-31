@@ -113,6 +113,9 @@
 }
 
 @media screen and (min-width: 634px) {
+    .pagination {
+        float: left;
+    }
     .homePageOfferItemBrandLogo {
         position: absolute;
         bottom: 5px;

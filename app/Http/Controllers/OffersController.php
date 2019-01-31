@@ -105,6 +105,22 @@ class OffersController extends Controller
         }
     }
 
+    public function paginatorPageResults(Request $request){
+        $page = $request['page'];
+
+        // if url contains ? - it means it has additional query like ?page=x
+        if(strpos(app('url')->previous(), '?') !== false){
+            $previousUrl = substr(app('url')->previous(), 0, strpos(app('url')->previous(), "?"));
+        }else{
+            $previousUrl = app('url')->previous();
+        }
+        
+
+        return redirect()->to($previousUrl . '?' . http_build_query(['page'=>$page]));
+
+        //return Redirect::back()->with('page', $page);
+    }
+
     public function OffersWithParameters($location, $FlightsCheck, $VacationsCheck, $HotelsCheck){
        
         //if location exists

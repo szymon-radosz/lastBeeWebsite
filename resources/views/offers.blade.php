@@ -136,7 +136,7 @@
                                     @if($offer->brand == "fly4freeUS")
                                         <a href="https://www.fly4free.com/flight-deals" target="_blank" title="Visit author website"><img src="/img/fly4free.png" class="homePageOfferItemBrandLogo" /></a>
                                     @elseif($offer->brand == "travelPiratesUS")
-                                        <a href="https://www.travelpirates.com/flights" target="_blank" title="Visit author website"><img src="/img/travelPiratesLogo.jpg" class="homePageOfferItemBrandLogo" /></a>
+                                        <a href="https://www.travelpirates.com/flights" target="_blank" title="Visit author website"><img src="/img/travelPiratesLogo.png" class="homePageOfferItemBrandLogo" /></a>
                                     @elseif($offer->brand == "secretFlyingUS")
                                         <a href="https://www.secretflying.com" target="_blank" title="Visit author website"><img src="/img/secretFlyingUS.gif" class="homePageOfferItemBrandLogo" /></a>
                                     @endif
@@ -147,7 +147,17 @@
                 @endforeach
 
                 {{ $offersList->links('vendor.pagination.default') }}
+
+                {{ Form::open(array('action' => array('OffersController@paginatorPageResults'), 'class' => 'goToPageForm')) }}
          
+                    <div class="form-group goToPageInput">
+                        {{ Form::text('page', null, array('class' => 'form-control', 'placeholder' => 'Display page ...')) }}
+                    </div>
+
+                    <button type="submit" class="btn paginationSearchBtn">Go</button>
+
+                {{ Form::close() }}
+
             </div>
     </div>
 </div>
