@@ -4,6 +4,9 @@
     return view('home');
 });*/
 
+Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider');
+Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
+
 Route::get('offers', 'OffersController@index');
 
 Route::get('terms', 'TermsController@index');

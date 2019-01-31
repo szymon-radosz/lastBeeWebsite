@@ -70,6 +70,12 @@
                                 @endif
                             </div>
                         </div>
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <a href="{{ url('/auth/facebook') }}" class="btn btn-facebook"><i class="fa fa-facebook"></i> Facebook</a>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
