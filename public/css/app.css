@@ -10795,17 +10795,42 @@ a.text-dark:focus {
   color: #ffbd01;
 }
 
-.goToPageForm .goToPageInput {
+.offerPagination {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.offerPagination .pagination {
+  max-width: 1000px;
+  margin: 0 auto 20px auto;
+}
+
+.offerPagination .pagination .page-link {
+  height: 35px;
+  padding: 10px 8px;
+}
+
+.offerPagination .pagination .page-item,
+.offerPagination .pagination .page-link {
+  border-radius: 0 !important;
+  line-height: 15px;
+}
+
+.offerPagination .pagination .paginationLastTab {
+  margin-right: 30px;
+}
+
+.offerPagination .goToPageForm .goToPageInput {
   float: left;
 }
 
-.goToPageForm .goToPageInput input {
+.offerPagination .goToPageForm .goToPageInput input {
   height: 35px !important;
   border-radius: 0 !important;
   max-width: 134px;
 }
 
-.goToPageForm .paginationSearchBtn {
+.offerPagination .goToPageForm .paginationSearchBtn {
   height: 35px;
   vertical-align: top;
   border-radius: 0;
@@ -10815,28 +10840,8 @@ a.text-dark:focus {
   transition: 0.5s;
 }
 
-.goToPageForm .paginationSearchBtn:hover {
+.offerPagination .goToPageForm .paginationSearchBtn:hover {
   background-color: #1c819e;
-}
-
-.pagination {
-  max-width: 1000px;
-  margin: 0 auto 20px auto;
-}
-
-.pagination .page-link {
-  height: 35px;
-  padding: 10px 8px;
-}
-
-.pagination .page-item,
-.pagination .page-link {
-  border-radius: 0 !important;
-  line-height: 15px;
-}
-
-.pagination .paginationLastTab {
-  margin-right: 30px;
 }
 
 .pageContainer {

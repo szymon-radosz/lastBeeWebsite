@@ -146,17 +146,19 @@
                     </div>
                 @endforeach
 
-                {{ $offersList->links('vendor.pagination.default') }}
+                <div class="offerPagination">
+                    {{ $offersList->links('vendor.pagination.default') }}
 
-                {{ Form::open(array('action' => array('OffersController@paginatorPageResults'), 'class' => 'goToPageForm')) }}
-         
-                    <div class="form-group goToPageInput">
-                        {{ Form::text('page', null, array('class' => 'form-control', 'placeholder' => 'Display page ...')) }}
-                    </div>
+                    {{ Form::open(array('action' => array('OffersController@paginatorPageResults'), 'class' => 'goToPageForm')) }}
+            
+                        <div class="form-group goToPageInput">
+                            {{ Form::text('page', null, array('class' => 'form-control', 'placeholder' => 'Display page ...')) }}
+                        </div>
 
-                    <button type="submit" class="btn paginationSearchBtn">Go</button>
+                        <button type="submit" class="btn paginationSearchBtn">Go</button>
 
-                {{ Form::close() }}
+                    {{ Form::close() }}
+                </div>
 
             </div>
     </div>

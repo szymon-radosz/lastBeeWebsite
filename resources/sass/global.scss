@@ -46,53 +46,58 @@
     }
 }
 
-.goToPageForm {
-    .goToPageInput {
-        float: left;
+.offerPagination {
+    max-width: 1000px;
+    margin: 0 auto;
 
-        input {
-            height: 35px !important;
+    .pagination {
+        max-width: 1000px;
+        margin: 0 auto 20px auto;
+
+        .page-link {
+            height: 35px;
+            padding: 10px 8px;
+        }
+
+        .page-item,
+        .page-link {
             border-radius: 0 !important;
-            max-width: 134px;
+            line-height: 15px;
+        }
+
+        .paginationLastTab {
+            margin-right: 30px;
         }
     }
 
-    .paginationSearchBtn {
-        height: 35px;
-        vertical-align: top;
-        border-radius: 0;
-        background-color: $darkBlue;
-        font-size: 12px;
+    .goToPageForm {
+        .goToPageInput {
+            float: left;
 
-        -o-transition: 0.5s;
-        -ms-transition: 0.5s;
-        -moz-transition: 0.5s;
-        -webkit-transition: 0.5s;
-        transition: 0.5s;
-    }
+            input {
+                height: 35px !important;
+                border-radius: 0 !important;
+                max-width: 134px;
+            }
+        }
 
-    .paginationSearchBtn:hover {
-        background-color: $lightBlue;
-    }
-}
+        .paginationSearchBtn {
+            height: 35px;
+            vertical-align: top;
+            border-radius: 0;
+            background-color: $darkBlue;
+            font-size: 12px;
 
-.pagination {
-    max-width: 1000px;
-    margin: 0 auto 20px auto;
+            -o-transition: 0.5s;
+            -ms-transition: 0.5s;
+            -moz-transition: 0.5s;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+        }
 
-    .page-link {
-        height: 35px;
-        padding: 10px 8px;
-    }
-
-    .page-item,
-    .page-link {
-        border-radius: 0 !important;
-        line-height: 15px;
-    }
-
-    .paginationLastTab {
-        margin-right: 30px;
+        .paginationSearchBtn:hover {
+            background-color: $lightBlue;
+        }
     }
 }
 
