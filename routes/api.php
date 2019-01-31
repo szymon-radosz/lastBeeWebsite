@@ -6,6 +6,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider');
+Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
+
 Route::get('offers','DashboardOffersController@index');
 
 Route::get('/getDailyAddedOffers', 'DashboardController@getDailyAddedOffers');
