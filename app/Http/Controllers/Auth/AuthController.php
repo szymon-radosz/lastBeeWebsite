@@ -39,9 +39,9 @@ class AuthController extends Controller
         try{
             if($authUser){
                 try{
-                    Auth::login($authUser, true);
                     Session::flash('message', "Nice to see you.");
-                    return Redirect::to('offers');
+                    return Auth::login($authUser, true);
+                    
 
                 }catch(\Exception $e){
                     Session::flash('message', "Can't sign in a user.");
@@ -52,7 +52,7 @@ class AuthController extends Controller
             }else{
                 Session::flash('message', "Can't sign in a user.");
                 return Redirect::to('offers');
-                
+
             }
         }catch(\Exception $e){
             Session::flash('message', "Can't sign in a user.");
