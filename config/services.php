@@ -46,4 +46,10 @@ return [
         'redirect'      => 'https://www.test.last-bee.com/api/auth/facebook/callback',
     ],
 
+    'google' => [
+        'client_id'     => 'lastbee',
+        'client_secret' => '1030124301988',
+        'redirect'      => 'https://www.test.last-bee.com/api/auth/google/callback',
+    ],
+
 ];
