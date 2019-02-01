@@ -51,11 +51,16 @@ class AuthController extends Controller
         if ($authUser) {
             return $authUser;
         }
-        return User::create([
-            'name'     => $user->name,
-            'email'    => $user->email,
-            'provider' => $provider,
-            'provider_id' => $user->id
-        ]);
+        try{
+            return User::create([
+                'name'     => $user->name,
+                'email'    => $user->email,
+                'provider' => $provider,
+                'provider_id' => $user->id
+            ]);
+        }catch(\Exception $e){
+            return "Can't sign up user. ";
+        }
+        
     }
 }
