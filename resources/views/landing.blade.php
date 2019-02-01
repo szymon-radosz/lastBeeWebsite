@@ -17,10 +17,12 @@
             <div class="col-sm-10 col-xs-10 offset-1">
                 <h1>One place, all <span>travel offers</span> you need.<br /><span>Absolutely for free.</span></h1>
 
-                <div class="landingHeaderSectionBtnSection">
-                    <a href="{{ url('/login') }}"><button class="btn loginBtn">Sign In</button></a>
-                    <a href="{{ url('/register') }}"><button class="btn registerBtn">Sign Up</button></a>
-                </div>
+                @if (!Auth::check())
+                    <div class="landingHeaderSectionBtnSection">
+                        <a href="{{ url('/login') }}"><button class="btn loginBtn">Sign In</button></a>
+                        <a href="{{ url('/register') }}"><button class="btn registerBtn">Sign Up</button></a>
+                    </div>
+                @endif
             </div>
 
                 <div class="imageAuthorLink">
