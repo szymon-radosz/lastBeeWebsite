@@ -47,8 +47,8 @@ return [
     ],
 
     'google' => [
-        'client_id'     => 'lastbee',
-        'client_secret' => '1030124301988',
+        'client_id'     => '1030124301988-llk83bbh38uc0o2it26cldeorvsaknnf.apps.googleusercontent.com',
+        'client_secret' => 'CSdKa2C9dXAaMudDzZ-y-Bl-',
         'redirect'      => 'https://www.test.last-bee.com/api/auth/google/callback',
     ],
 
