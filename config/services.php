@@ -41,15 +41,15 @@ return [
     ],
 
     'facebook' => [
-        'client_id'     => '819364401737651',
-        'client_secret' => '23b7d9ebaa0d5683ebf4892912571ba2',
-        'redirect'      => 'https://www.test.last-bee.com/api/auth/facebook/callback',
+        'client_id'     => env('FACEBOOK_ID'),
+        'client_secret' => env('FACEBOOK_SECRET'),
+        'redirect'      => env('FACEBOOK_URL'),
     ],
 
     'google' => [
-        'client_id'     => '1030124301988-llk83bbh38uc0o2it26cldeorvsaknnf.apps.googleusercontent.com',
-        'client_secret' => 'CSdKa2C9dXAaMudDzZ-y-Bl-',
-        'redirect'      => 'https://www.test.last-bee.com/api/auth/google/callback',
+        'client_id'     => env('GOOGLE_ID'),
+        'client_secret' => env('GOOGLE_SECRET'),
+        'redirect'      => env('GOOGLE_URL'),
     ],
 
 ];
