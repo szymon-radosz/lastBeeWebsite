@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use Auth;
 use Socialite;
 use App\User;
+use Redirect;
 use App\Http\Controllers\Controller;
 
 
