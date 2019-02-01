@@ -36,7 +36,7 @@ class AuthController extends Controller
         $user = Socialite::driver($provider)->user();
         $authUser = $this->findOrCreateUser($user, $provider);
 
-        
+        try{
             if($authUser){
                 try{
                     Auth::login($authUser, true);
@@ -52,7 +52,13 @@ class AuthController extends Controller
             }else{
                 Session::flash('message', "Can't sign in a user.");
                 return Redirect::to('offers');
+                
             }
+        }catch(\Exception $e){
+            Session::flash('message', "Can't sign in a user.");
+            return Redirect::to('offers');
+
+        }
             
         
     }
