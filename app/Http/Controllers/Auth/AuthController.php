@@ -36,6 +36,8 @@ class AuthController extends Controller
         $user = Socialite::driver($provider)->user();
         $authUser = $this->findOrCreateUser($user, $provider);
 
+        var_dump($authUser);
+
         try{
             if($authUser){
                 try{
