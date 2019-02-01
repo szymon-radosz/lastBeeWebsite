@@ -33,12 +33,10 @@ class AuthController extends Controller
     
     public function handleProviderCallback($provider)
     {
-        $user = Socialite::driver($provider)->user();
-        $authUser = $this->findOrCreateUser($user, $provider);
-
-        var_dump($authUser->name);
-
         try{
+            $user = Socialite::driver($provider)->user();
+            $authUser = $this->findOrCreateUser($user, $provider);
+
             if($authUser){
                 try{
                     Session::flash('message', "Nice to see you.");
