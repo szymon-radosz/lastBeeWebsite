@@ -33,34 +33,20 @@ class AuthController extends Controller
     
     public function handleProviderCallback($provider)
     {
+        $user = Socialite::driver($provider)->user();
+        $authUser = $this->findOrCreateUser($user, $provider);
+
         try{
-            $user = Socialite::driver($provider)->user();
-            $authUser = $this->findOrCreateUser($user, $provider);
-
-            if($authUser){
-                try{
-                    Session::flash('message', "Nice to see you.");
-                    return Auth::login($authUser, true);
-                    
-
-                }catch(\Exception $e){
-                    Session::flash('message', "Can't sign in a user.");
-                    return Redirect::to('offers');
-        
-                }
-
-            }else{
-                Session::flash('message', "Can't sign in a user.");
-                return Redirect::to('offers');
-
-            }
-        }catch(\Exception $e){
-            Session::flash('message', "Can't sign in a user.");
+            
+            Auth::login($authUser, true);
+            Session::flash('message', "Nice to see you.");
             return Redirect::to('offers');
 
+        }catch(\Exception $e){
+            Session::flash('message', "Can't sign in a user.");
+            return;
+
         }
-            
-        
     }
 
     
@@ -89,7 +75,7 @@ class AuthController extends Controller
 
         }catch(\Exception $e){
             Session::flash('message', "Can't sign up a user.");
-            return Redirect::to('offers');
+            return;
 
         }
         
