@@ -37,7 +37,7 @@ class AuthController extends Controller
         $authUser = $this->findOrCreateUser($user, $provider);
 
         try{
-            if(!$authUser->isEmpty()){
+            if($authUser != null){
                 Auth::login($authUser, true);
                 Session::flash('message', "Nice to see you.");
                 return Redirect::to('offers');
