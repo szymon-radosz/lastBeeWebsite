@@ -69,19 +69,19 @@
                         </div>
                         
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4 authButtonPanel">
+                            <div class="col-md-8 offset-md-4 authButtonPanel">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
-                            </div>
-                        </div>
 
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
+                                <p class="formOr">or use</p>
+
                                 <a href="{{ url('api/auth/facebook') }}" class="btn facebookBtn">Facebook</a>
                                 <a href="{{ url('api/auth/google') }}" class="btn googleBtn">Google</a>
                             </div>
                         </div>
+
+                      
                     </form>
 
                 </div>

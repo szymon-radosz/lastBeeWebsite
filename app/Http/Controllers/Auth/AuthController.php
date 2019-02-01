@@ -9,7 +9,6 @@ use Session;
 use Redirect;
 use App\Http\Controllers\Controller;
 
-
 class AuthController extends Controller
 {
     /**
@@ -23,7 +22,6 @@ class AuthController extends Controller
 
     }
 
-    
     //Obtain the user information from provider.  Check if the user already exists in our
     //database by looking up their provider_id in the database.
     //If the user exists, log them in. Otherwise, create a new user then log them in. After that 
@@ -38,23 +36,29 @@ class AuthController extends Controller
 
         try{
             if($authUser != null){
-                Auth::login($authUser, true);
-                Session::flash('message', "Nice to see you.");
-                return Redirect::to('offers');
+                try{
+                    Auth::login($authUser, true);
+                    Session::flash('message', "Nice to see you.");
+                    return Redirect::to('offers');
+
+                }catch(\Exception $e){
+                    Session::flash('message', "Can't sign in a user.");
+                    return Redirect::to('offers');
+
+                }
+                
             }else{
                 Session::flash('message', "Can't sign in a user.");
-                return;
+                return Redirect::to('offers');
             }
             
-
         }catch(\Exception $e){
             Session::flash('message', "Can't sign in a user.");
-            return;
+            return Redirect::to('offers');
 
         }
     }
 
-    
     //If a user has registered before using social auth, return the user
     //else, create a new user object.
     //@param  $user Socialite user object

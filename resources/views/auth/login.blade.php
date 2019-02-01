@@ -68,16 +68,15 @@
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
+
+                                <p class="formOr">or use</p>
+
+                                <a href="{{ url('api/auth/facebook') }}" class="btn facebookBtn">Facebook</a>
+                                <a href="{{ url('api/auth/google') }}" class="btn googleBtn">Google</a>
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <a href="{{ url('api/auth/facebook') }}" class="btn facebookBtn">Facebook</a>
-                                <a href="{{ url('api/auth/google') }}" class="btn googleBtn">Google</a>
-                            
-                            </div>
-                        </div>
+                       
                     </form>
                 </div>
             </div>
