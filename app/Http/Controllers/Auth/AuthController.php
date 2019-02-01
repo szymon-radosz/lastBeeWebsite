@@ -20,6 +20,7 @@ class AuthController extends Controller
     public function redirectToProvider($provider)
     {
         return Socialite::driver($provider)->redirect();
+
     }
 
     
@@ -33,15 +34,22 @@ class AuthController extends Controller
     public function handleProviderCallback($provider)
     {
         $user = Socialite::driver($provider)->user();
+        $authUser = $this->findOrCreateUser($user, $provider);
 
         try{
-            $authUser = $this->findOrCreateUser($user, $provider);
-            Auth::login($authUser, true);
-            Session::flash('message', "Nice to see you.");
-            return Redirect::to('offers');
+            if($authUser){
+                Auth::login($authUser, true);
+                Session::flash('message', "Nice to see you.");
+                return Redirect::to('offers');
+            }else{
+                Session::flash('message', "Can't sign in a user.");
+                return;
+            }
+            
         }catch(\Exception $e){
             Session::flash('message', "Can't sign in a user.");
             return;
+
         }
     }
 
@@ -55,9 +63,11 @@ class AuthController extends Controller
     public function findOrCreateUser($user, $provider)
     {
         $authUser = User::where('provider_id', $user->id)->first();
+
         if ($authUser) {
             return $authUser;
         }
+
         try{
             Session::flash('message', "Thank you. You created an account. Enjoy.");
             return User::create([
@@ -66,9 +76,11 @@ class AuthController extends Controller
                 'provider' => $provider,
                 'provider_id' => $user->id
             ]);
+
         }catch(\Exception $e){
             Session::flash('message', "Can't sign up a user.");
             return;
+
         }
         
     }
