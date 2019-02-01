@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use Auth;
 use Socialite;
 use App\User;
+use Session;
 use Redirect;
 use App\Http\Controllers\Controller;
 
@@ -33,9 +34,15 @@ class AuthController extends Controller
     {
         $user = Socialite::driver($provider)->user();
 
-        $authUser = $this->findOrCreateUser($user, $provider);
-        Auth::login($authUser, true);
-        return Redirect::to('offers');
+        try{
+            $authUser = $this->findOrCreateUser($user, $provider);
+            Auth::login($authUser, true);
+            Session::flash('message', "Nice to see you.");
+            return Redirect::to('offers');
+        }catch(\Exception $e){
+            Session::flash('message', "Can't sign in a user.");
+            return;
+        }
     }
 
     
@@ -52,6 +59,7 @@ class AuthController extends Controller
             return $authUser;
         }
         try{
+            Session::flash('message', "Thank you. You created an account. Enjoy.");
             return User::create([
                 'name'     => $user->name,
                 'email'    => $user->email,
@@ -59,7 +67,8 @@ class AuthController extends Controller
                 'provider_id' => $user->id
             ]);
         }catch(\Exception $e){
-            return "Can't sign up user. ";
+            Session::flash('message', "Can't sign up a user.");
+            return;
         }
         
     }
