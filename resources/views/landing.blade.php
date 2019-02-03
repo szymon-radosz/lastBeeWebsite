@@ -142,14 +142,14 @@
                             
                             @if (Auth::check())
                                 <a href="{{$offersList[0]->page_url}}" target="_blank" title="Show More Details">    
-                                    <h2 onclick="location.href='{{ env('APP_ADDRESS') }}/offers/{{ substr($offersList[0]->title, 0, 20) }}/1/1/1' ;">{{$offersList[0]->title}}</h2>
+                                    <h2 onclick="location.href='{{ env('APP_ADDRESS') }}/offers/{{ substr($offersList[0]->title, 0, 20) }}/1/1/1/0/10000' ;">{{$offersList[0]->title}}</h2>
                                 </a>
                             @else
                                 <h2>{{$offersList[0]->title}}</h2>
                             @endif
 
                             <p class="fullLandingBestOffersSectionRectDesc">{{substr($offersList[0]->description, 0, 300)}} ...</p>
-                            <a href="{{ env('APP_ADDRESS') }}/offers/{{ substr($offersList[0]->title, 0, 20) }}/1/1/1" target="_blank" title="Vote for that offer">
+                            <a href="{{ env('APP_ADDRESS') }}/offers/{{ substr($offersList[0]->title, 0, 20) }}/1/1/1/0/10000" target="_blank" title="Vote for that offer">
                                 <img src="/img/heart.png" class="fullLandingBestOffersSectionVoteIcon" />
                             </a>
                             <p class="fullLandingBestOffersSectionVoteCount">{{$offersList[0]->users_count}}</p>
@@ -169,13 +169,13 @@
                 
                                     @if (Auth::check())
                                         <a href="{{$offersList[0]->page_url}}" target="_blank" title="Show More Details">    
-                                            <h2 onclick="location.href='{{ env('APP_ADDRESS') }}/offers/{{ substr($offersList[1]->title, 0, 20) }}/1/1/1' ;">{{$offersList[1]->title}}</h2>
+                                            <h2 onclick="location.href='{{ env('APP_ADDRESS') }}/offers/{{ substr($offersList[1]->title, 0, 20) }}/1/1/1/0/10000' ;">{{$offersList[1]->title}}</h2>
                                         </a>
                                     @else
                                         <h2>{{$offersList[1]->title}}</h2>
                                     @endif
 
-                                    <a href="{{ env('APP_ADDRESS') }}/offers/{{ substr($offersList[1]->title, 0, 20) }}/1/1/1" target="_blank" title="Vote for that offer">
+                                    <a href="{{ env('APP_ADDRESS') }}/offers/{{ substr($offersList[1]->title, 0, 20) }}/1/1/1/0/10000" target="_blank" title="Vote for that offer">
                                         <img src="/img/heart.png" class="fullLandingBestOffersSectionVoteIcon" />
                                     </a>
                                     <p class="fullLandingBestOffersSectionVoteCount">{{$offersList[1]->users_count}}</p>
@@ -193,13 +193,13 @@
                                         
                                         @if (Auth::check())
                                             <a href="{{$offersList[2]->page_url}}" target="_blank" title="Show More Details">    
-                                                <h2 onclick="location.href='{{ env('APP_ADDRESS') }}/offers/{{ substr($offersList[2]->title, 0, 20) }}/1/1/1' ;">{{$offersList[2]->title}}</h2>
+                                                <h2 onclick="location.href='{{ env('APP_ADDRESS') }}/offers/{{ substr($offersList[2]->title, 0, 20) }}/1/1/1/0/10000' ;">{{$offersList[2]->title}}</h2>
                                             </a>
                                         @else
                                             <h2>{{$offersList[2]->title}}</h2>
                                         @endif
 
-                                        <a href="{{ env('APP_ADDRESS') }}/offers/{{ substr($offersList[2]->title, 0, 20) }}/1/1/1" target="_blank" title="Vote for that offer">
+                                        <a href="{{ env('APP_ADDRESS') }}/offers/{{ substr($offersList[2]->title, 0, 20) }}/1/1/1/0/10000" target="_blank" title="Vote for that offer">
                                             <img src="/img/heart.png" class="fullLandingBestOffersSectionVoteIcon" />
                                         </a>
                                         <p class="fullLandingBestOffersSectionVoteCount">{{$offersList[2]->users_count}}</p>
@@ -217,13 +217,13 @@
                                 
                                         @if (Auth::check())
                                             <a href="{{$offersList[3]->page_url}}" target="_blank" title="Show More Details">    
-                                                <h2 onclick="location.href='{{ env('APP_ADDRESS') }}/offers/{{ substr($offersList[3]->title, 0, 20) }}/1/1/1' ;">{{$offersList[3]->title}}</h2>
+                                                <h2 onclick="location.href='{{ env('APP_ADDRESS') }}/offers/{{ substr($offersList[3]->title, 0, 20) }}/1/1/1/0/10000' ;">{{$offersList[3]->title}}</h2>
                                             </a>
                                         @else
                                             <h2>{{$offersList[3]->title}}</h2>
                                         @endif
 
-                                        <a href="{{ env('APP_ADDRESS') }}/offers/{{ substr($offersList[3]->title, 0, 20) }}/1/1/1" target="_blank" title="Vote for that offer">
+                                        <a href="{{ env('APP_ADDRESS') }}/offers/{{ substr($offersList[3]->title, 0, 20) }}/1/1/1/0/10000" target="_blank" title="Vote for that offer">
                                             <img src="/img/heart.png" class="fullLandingBestOffersSectionVoteIcon" />
                                         </a>
                                         <p class="fullLandingBestOffersSectionVoteCount">{{$offersList[3]->users_count}}</p>
