@@ -137,7 +137,7 @@
                                 <div>
                                     @if (Auth::check())
                                         <a href={{$offer->page_url}} target="_blank" title="Show More Details">
-                                            <h2 class="offerTitle" onclick="location.href='{{ env('APP_ADDRESS') }}/offers/{{ substr($offer->title, 0, 20) }}/1/1/1' ;">{{$offer->title}}</h2>
+                                            <h2 class="offerTitle" onclick="location.href='{{ env('APP_ADDRESS') }}/offers/{{ substr($offer->title, 0, 20) }}/1/1/1/0/10000' ;">{{$offer->title}}</h2>
                                         </a>
                                     @else 
                                         <h2 class="offerTitle">{{$offer->title}}</h2>
