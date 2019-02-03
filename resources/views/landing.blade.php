@@ -70,7 +70,7 @@
             </div>
 
             <div class="col-sm-12 landingSearchSectionLocationInput">
-                <p class="landingSearchSectionHelper">2. Write down interesting location.</p>
+                <p class="landingSearchSectionHelper">2. Write down interesting location. (optional)</p>
                 <div class="form-group">
                     <!--<input type="text" class="form-control" id="usr" placeholder="Location">-->
 
@@ -80,7 +80,7 @@
             </div>
 
             <div class="col-sm-12 landingSearchSectionLocationInput">
-            <p class="landingSearchSectionHelper">3. Select interesting price range. (optional)</p>
+            <p class="landingSearchSectionHelper">3. Select interesting price range.</p>
             <div class="form-group">
                 <div id="rangeSlider"></div>
 

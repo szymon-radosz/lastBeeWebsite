@@ -61,7 +61,7 @@
         </div>
 
         <div class="col-sm-12 landingSearchSectionLocationInput">
-            <p class="landingSearchSectionHelper">3. Select interesting price range. (optional)</p>
+            <p class="landingSearchSectionHelper">3. Select interesting price range.</p>
             <div class="form-group">
                 <div id="rangeSlider"></div>
 
