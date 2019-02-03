@@ -101,6 +101,62 @@
     }
 }
 
+.priceRange {
+    text-align: center;
+
+    p,
+    #priceRangeSendDisplayOnViewLower,
+    #priceRangeSendDisplayOnViewUpper {
+        display: inline-block;
+    }
+
+    .rangeHeader {
+        font-weight: 600;
+    }
+
+    p {
+        margin: 0;
+    }
+}
+
+#priceRangeSendToFormLower,
+#priceRangeSendToFormUpper {
+    display: none;
+}
+
+.priceRangeTop {
+    margin-top: 30px;
+}
+
+#rangeSlider {
+    width: 60%;
+    margin: 10px auto 0 auto;
+    height: 10px;
+
+    .noUi-connect {
+        background: $lightBlue;
+    }
+
+    .noUi-handle {
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        text-align: center;
+        top: -8px;
+    }
+
+    .noUi-handle:hover,
+    .noUi-handle:active,
+    .noUi-handle:visited,
+    .noUi-handle:focus {
+        outline: none;
+    }
+    .noUi-handle:before,
+    .noUi-handle:after {
+        display: none;
+    }
+}
+
 .formOr {
     margin: 10px 0;
 }

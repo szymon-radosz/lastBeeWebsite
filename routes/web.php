@@ -23,7 +23,7 @@ Route::post('/paginatorPageResults', 'OffersController@paginatorPageResults');
 
 
 //Route::get('offers/{location}', 'OffersController@OffersWithLocation');
-Route::get('offers/{locationInput}/{FlightsCheck}/{VacationsCheck}/{HotelsCheck}', 'OffersController@OffersWithParameters');
+Route::get('offers/{locationInput}/{FlightsCheck}/{VacationsCheck}/{HotelsCheck}/{lowerPrice}/{upperPrice}', 'OffersController@OffersWithParameters');
 
 Auth::routes();
 

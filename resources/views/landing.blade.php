@@ -79,8 +79,31 @@
                 </div>
             </div>
 
+            <div class="col-sm-12 landingSearchSectionLocationInput">
+            <p class="landingSearchSectionHelper">3. Select interesting price range. (optional)</p>
+            <div class="form-group">
+                <div id="rangeSlider"></div>
+
+                <div class="priceRange priceRangeTop">
+                    <p class="rangeHeader">From: </p>
+                    <div id="priceRangeSendDisplayOnViewLower"></div>
+                    <p>$</p>
+
+                    {{ Form::text('priceRangeSendToFormLower', '100', array('id' => 'priceRangeSendToFormLower')) }}
+                </div>
+                <div class="priceRange">
+                    <p class="rangeHeader">To: </p>
+                    <div id="priceRangeSendDisplayOnViewUpper"></div>
+                    <p>$</p>
+
+                    {{ Form::text('priceRangeSendToFormUpper', '3000', array('id' => 'priceRangeSendToFormUpper')) }}
+                </div>
+
+            </div>
+        </div>
+
             <div class="col-sm-12 landingSearchSectionSearchBtn">
-                <p class="landingSearchSectionHelper">3. Search through all offers.</p>
+                <p class="landingSearchSectionHelper">4. Search through all offers.</p>
                 <button type="submit" class="btn landingSearchSectionBtn">Search</button>
             </div>
             {{ Form::close() }}

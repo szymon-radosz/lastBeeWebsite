@@ -51,7 +51,7 @@
         </div>
 
         <div class="col-sm-12 landingSearchSectionLocationInput">
-            <p class="landingSearchSectionHelper">2. Write down interesting location.</p>
+            <p class="landingSearchSectionHelper">2. Write down interesting location. (optional)</p>
             <div class="form-group">
                 <!--<input type="text" class="form-control" id="usr" placeholder="Location">-->
 
@@ -60,8 +60,31 @@
             </div>
         </div>
 
+        <div class="col-sm-12 landingSearchSectionLocationInput">
+            <p class="landingSearchSectionHelper">3. Select interesting price range. (optional)</p>
+            <div class="form-group">
+                <div id="rangeSlider"></div>
+
+                <div class="priceRange priceRangeTop">
+                    <p class="rangeHeader">From: </p>
+                    <div id="priceRangeSendDisplayOnViewLower"></div>
+                    <p>$</p>
+
+                    {{ Form::text('priceRangeSendToFormLower', '100', array('id' => 'priceRangeSendToFormLower')) }}
+                </div>
+                <div class="priceRange">
+                    <p class="rangeHeader">To: </p>
+                    <div id="priceRangeSendDisplayOnViewUpper"></div>
+                    <p>$</p>
+
+                    {{ Form::text('priceRangeSendToFormUpper', '3000', array('id' => 'priceRangeSendToFormUpper')) }}
+                </div>
+
+            </div>
+        </div>
+
         <div class="col-sm-12 landingSearchSectionSearchBtn">
-            <p class="landingSearchSectionHelper">3. Search through all offers.</p>
+            <p class="landingSearchSectionHelper">4. Search through all offers.</p>
             <button type="submit" class="btn landingSearchSectionBtn">Search</button>
         </div>
         {{ Form::close() }}
@@ -77,21 +100,21 @@
                                 <div class="imageContainer">
                                     <img src="/img/airplane-white.png" />
                                 </div>
-                                <a href="{{ env('APP_ADDRESS') }}/offers/0/1/0/0" target="_blank" title="Show Flights Offers"><p>Flights</p></a>
+                                <a href="{{ env('APP_ADDRESS') }}/offers/0/1/0/0/0/10000" target="_blank" title="Show Flights Offers"><p>Flights</p></a>
                             </div>
                         @elseif($offer->type == "Vacations")
                             <div class="OfferType OfferTypeVacations">
                                 <div class="imageContainer">
                                     <img src="/img/sunset.png" />
                                 </div>
-                                <a href="{{ env('APP_ADDRESS') }}/offers/0/0/1/0" target="_blank" title="Show Vacations Offers"><p>Vacations</p></a>
+                                <a href="{{ env('APP_ADDRESS') }}/offers/0/0/1/0/0/10000" target="_blank" title="Show Vacations Offers"><p>Vacations</p></a>
                             </div>
                         @elseif($offer->type == "Accomodation")
                             <div class="OfferType OfferTypeAccomodation">
                                 <div class="imageContainer">
                                     <img src="/img/hotel-white.png" />
                                 </div>
-                                <a href="{{ env('APP_ADDRESS') }}/offers/0/0/0/1" target="_blank" title="Show Hotels Offers"><p>Hotels</p></a>
+                                <a href="{{ env('APP_ADDRESS') }}/offers/0/0/0/1/0/10000" target="_blank" title="Show Hotels Offers"><p>Hotels</p></a>
                             </div>
                         @endif
 
