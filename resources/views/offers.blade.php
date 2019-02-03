@@ -146,7 +146,7 @@
                                     <div class="homePageOfferItemBtn">
                                             @if (Auth::check())
                                                 <a href={{$offer->page_url}} target="_blank" title="Show More Details">
-                                                    <div class="btn btn-primary" onclick="location.href='{{ env('APP_ADDRESS') }}/offers/{{ substr($offer->title, 0, 20) }}/1/1/1' ;">Visit offer</div>
+                                                    <div class="btn btn-primary" onclick="location.href='{{ env('APP_ADDRESS') }}/offers/{{ substr($offer->title, 0, 20) }}/1/1/1/0/10000' ;">Visit offer</div>
                                                 </a>
                                             @else
                                                 <a href="{{ url('register') }}" title="Register for free to get access to offer">
