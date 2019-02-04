@@ -23,8 +23,7 @@
     <meta name="description" content="Find best travel offers, cheap flights, cheap vacation, cheap hotels in one place. Best US travel offers.">
     <meta name="keywords" content="hotels,cheap flights,flights,airline tickets,plane tickets,cheap airline tickets,cheap airfare,travelling,travel,vacations">
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -33,7 +32,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-    <script type="text/javascript" src="{{ URL::asset('js/landingForm.js') }}"></script>
+    
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900&amp;subset=latin-ext" rel="stylesheet">
 </head>
@@ -136,5 +135,10 @@
             </div>
         </div>
     </div>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <script type="text/javascript" src="{{ URL::asset('js/landingForm.js') }}"></script>
 </body>
 </html>
