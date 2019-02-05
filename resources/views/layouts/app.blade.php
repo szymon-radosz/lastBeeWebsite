@@ -23,7 +23,7 @@
     <meta name="description" content="Find best travel offers, cheap flights, cheap vacation, cheap hotels in one place. Best US travel offers.">
     <meta name="keywords" content="hotels,cheap flights,flights,airline tickets,plane tickets,cheap airline tickets,cheap airfare,travelling,travel,vacations">
 
-    
+    <link rel="canonical" href="https://last-bee.com" >
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
