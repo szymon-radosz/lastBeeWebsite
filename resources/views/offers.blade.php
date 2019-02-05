@@ -98,21 +98,21 @@
                         @if($offer->type == "Flights")
                             <div class="OfferType OfferTypeFlights">
                                 <div class="imageContainer">
-                                    <img src="/img/airplane-white.png" />
+                                    <img src="/img/airplane-white.png" alt="Flights"/>
                                 </div>
                                 <a href="{{ env('APP_ADDRESS') }}/offers/0/1/0/0/0/10000" target="_blank" title="Show Flights Offers"><p>Flights</p></a>
                             </div>
                         @elseif($offer->type == "Vacations")
                             <div class="OfferType OfferTypeVacations">
                                 <div class="imageContainer">
-                                    <img src="/img/sunset.png" />
+                                    <img src="/img/sunset.png" alt="Vacations"/>
                                 </div>
                                 <a href="{{ env('APP_ADDRESS') }}/offers/0/0/1/0/0/10000" target="_blank" title="Show Vacations Offers"><p>Vacations</p></a>
                             </div>
                         @elseif($offer->type == "Accomodation")
                             <div class="OfferType OfferTypeAccomodation">
                                 <div class="imageContainer">
-                                    <img src="/img/hotel-white.png" />
+                                    <img src="/img/hotel-white.png" alt="Accomodation"/>
                                 </div>
                                 <a href="{{ env('APP_ADDRESS') }}/offers/0/0/0/1/0/10000" target="_blank" title="Show Hotels Offers"><p>Hotels</p></a>
                             </div>
@@ -122,7 +122,7 @@
 
                             {{ Form::open(array('action' => array('VotesController@store', 'vote_id' => $offer->id))) }}
                                 <div class="imgContainer">
-                                    <button type="submit" title="Vote for that offer"><img src="/img/heart.png" /></button>
+                                    <button type="submit" title="Vote for that offer"><img src="/img/heart.png" alt="Add vote"/></button>
                                 </div>
                             {{ Form::close() }}
 
