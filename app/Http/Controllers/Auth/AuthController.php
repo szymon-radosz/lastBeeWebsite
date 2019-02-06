@@ -8,6 +8,8 @@ use App\User;
 use Session;
 use Redirect;
 use App\Http\Controllers\Controller;
+use App\Mail\WelcomeMail;
+use Illuminate\Support\Facades\Mail;
 
 class AuthController extends Controller
 {
@@ -75,7 +77,7 @@ class AuthController extends Controller
 
         try{
             Session::flash('message', "Thank you. You created an account. Enjoy.");
-            
+
             $user = User::create([
                 'name'     => $user->name,
                 'email'    => $user->email,
