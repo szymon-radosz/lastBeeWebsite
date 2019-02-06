@@ -75,12 +75,17 @@ class AuthController extends Controller
 
         try{
             Session::flash('message', "Thank you. You created an account. Enjoy.");
-            return User::create([
+            
+            $user = User::create([
                 'name'     => $user->name,
                 'email'    => $user->email,
                 'provider' => $provider,
                 'provider_id' => $user->id
             ]);
+
+            Mail::to($user->email)->send(new WelcomeMail($user));
+
+            return $user;
 
         }catch(\Exception $e){
             Session::flash('message', "Can't sign up a user.");
