@@ -13,6 +13,9 @@
 
     <meta charset="utf-8">
 
+    <!-- affiliate -->
+    <meta name="verify-admitad" content="fe6796dfc8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
