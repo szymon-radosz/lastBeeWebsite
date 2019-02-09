@@ -36,7 +36,11 @@
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900&amp;subset=latin-ext" rel="stylesheet">
 </head>
-<body>
+@if(!Session::has('country'))
+    <body class="disableScroll">
+@else
+    <body>
+@endif
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
@@ -57,18 +61,31 @@
                     <ul class="navbar-nav ml-auto">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/offers') }}">Offers</a>
+                            @if(Session::get('country') == 'PL')
+                                <a class="nav-link" href="{{ url('/offers') }}">Oferty</a>
+                            @else
+                                <a class="nav-link" href="{{ url('/offers') }}">Offers</a>
+                            @endif
+                            
                         </li>
                             
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">Sign In</a>
+                                @if(Session::get('country') == 'PL')
+                                    <a class="nav-link" href="{{ route('login') }}">Logowanie</a>
+                                @else
+                                    <a class="nav-link" href="{{ route('login') }}">Sign In</a>
+                                @endif
+                               
                             </li>
                             <li class="nav-item">
-                                @if (Route::has('register'))
+                                @if(Session::get('country') == 'PL' && Route::has('register'))
+                                    <a class="nav-link" href="{{ route('register') }}">Rejestracja</a>
+                                @elseif(Route::has('register'))
                                     <a class="nav-link" href="{{ route('register') }}">Sign Up</a>
                                 @endif
+                               
                             </li>
                         @else
                             <li class="nav-item dropdown">
@@ -77,11 +94,20 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+
+                                    @if(Session::get('country') == 'PL' && Route::has('register'))
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                                            {{ __('Wyloguj się') }}
+                                        </a>
+                                    @elseif(Route::has('register'))
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
+                                    @endif
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
@@ -89,10 +115,91 @@
                                 </div>
                             </li>
                         @endguest
+
+                        <li class="nav-item">
+                            @if(Session::get('country') == 'USA')
+                                {{ Form::open(array('action' => array('CountryController@clearCountry'))) }}
+                                    <button type="submit" class="currentCountryBtn">
+                                        <img src="/img/USAflag.png" class="currentCountry" />
+                                    </button>   
+                                {{ Form::close() }}
+
+                            @elseif(Session::get('country') == 'UK')
+                                {{ Form::open(array('action' => array('CountryController@clearCountry'))) }}
+                                    <button type="submit" class="currentCountryBtn">
+                                        <img src="/img/GBflag.gif" class="currentCountry" />
+                                    </button>   
+                                {{ Form::close() }}
+
+                            @elseif(Session::get('country') == 'AU')
+                                {{ Form::open(array('action' => array('CountryController@clearCountry'))) }}
+                                    <button type="submit" class="currentCountryBtn">
+                                        <img src="/img/AUflag.png" class="currentCountry" />
+                                    </button>   
+                                {{ Form::close() }}
+
+                            @elseif(Session::get('country') == 'PL')
+                                {{ Form::open(array('action' => array('CountryController@clearCountry'))) }}
+                                    <button type="submit" class="currentCountryBtn">
+                                        <img src="/img/PLflag.jpg" class="currentCountry" />
+                                    </button>   
+                                {{ Form::close() }}
+
+                            @endif 
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
+
+        @if(!Session::has('country'))
+            <div class="modalBg">
+                <div class="modalContainer">
+                    <h3>Please, select country whose offers we should display for you.</h3>
+                    <div class="countryContainer">
+                        <div class="countryRow">
+                            <div class="countryOption">
+                                {{ Form::open(array('action' => array('CountryController@setUSA'))) }}
+                                    <button type="submit" title="Select USA">
+                                        <img src="/img/USAflag.png" id="USAflag" />
+                                    </button>   
+                                {{ Form::close() }}
+
+                            </div>
+
+                            <div class="countryOption">
+                                {{ Form::open(array('action' => array('CountryController@setUK'))) }}
+                                    <button type="submit" title="Select UK">
+                                        <img src="/img/GBflag.gif" id="GBflag" />
+                                    </button>   
+                                {{ Form::close() }}
+
+                            </div>
+                        </div>
+
+                        <div class="countryRow">
+                            {{-- <div class="countryOption">
+                                {{ Form::open(array('action' => array('CountryController@setAU'))) }}
+                                    <button type="submit" title="Select AU">
+                                        <img src="/img/AUflag.png" id="AUflag" />
+                                    </button>   
+                                {{ Form::close() }}
+
+                            </div> --}}
+
+                            <div class="countryOption">
+                                {{ Form::open(array('action' => array('CountryController@setPL'))) }}
+                                    <button type="submit" title="Select PL">
+                                        <img src="/img/PLflag.jpg" id="PLflag" />
+                                    </button>   
+                                {{ Form::close() }}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endif
 
         <main class="py-4">
             @yield('content')
@@ -121,17 +228,36 @@
                 </div>
             </div>
             <div class="col-sm-3">
-                <p class="footerSectionHeader">Offers</p>
-                <a href="{{ url('/offers') }}"><p>Offers</p></a>
+                @if(Session::get('country') == 'PL')
+                    <p class="footerSectionHeader">Oferty</p>
+                    <a href="{{ url('/offers') }}"><p>Oferty</p></a>
+                @else
+                    <p class="footerSectionHeader">Offers</p>
+                    <a href="{{ url('/offers') }}"><p>Offers</p></a>
+                @endif
+                
             </div>
             <div class="col-sm-3">
-                <p class="footerSectionHeader">Website</p>
-                <a href="{{ url('/about') }}"><p>About us</p></a>
-                <a href="{{ url('/privacy-policy') }}"><p>Privacy Policy</p></a>
+                @if(Session::get('country') == 'PL')
+                    <p class="footerSectionHeader">Aplikacja</p>
+                    <a href="{{ url('/about') }}"><p>O nas</p></a>
+                    <a href="{{ url('/privacy-policy') }}"><p>Polityka prywatności</p></a>
+                @else
+                    <p class="footerSectionHeader">Website</p>
+                    <a href="{{ url('/about') }}"><p>About us</p></a>
+                    <a href="{{ url('/privacy-policy') }}"><p>Privacy Policy</p></a>
+                @endif
+                
             </div>
             <div class="col-sm-3">
-                <p class="footerSectionHeader">Contact</p>
-                <a href="{{ url('/customer-support') }}"><p>Customer Support</p></a>
+                @if(Session::get('country') == 'PL')
+                    <p class="footerSectionHeader">Kontakt</p>
+                    <a href="{{ url('/customer-support') }}"><p>Obsługa klienta</p></a>
+                @else
+                    <p class="footerSectionHeader">Contact</p>
+                    <a href="{{ url('/customer-support') }}"><p>Customer Support</p></a>
+                @endif
+                
             </div>
         </div>
     </div>

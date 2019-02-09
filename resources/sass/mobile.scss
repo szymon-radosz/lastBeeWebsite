@@ -16,7 +16,29 @@
     }
 }
 
+@media screen and (max-width: 845px) {
+    .currentCountryBtn {
+        position: relative !important;
+        margin-bottom: 20px;
+    }
+
+    .navbar-nav {
+        .dropdown-menu-right {
+            margin-bottom: 10px;
+        }
+    }
+}
+
 @media screen and (max-width: 633px) {
+    .modalContainer {
+        width: 90% !important;
+
+        .countryOption {
+            width: 35% !important;
+            max-width: 120px;
+        }
+    }
+
     .OfferVoteContainer {
         bottom: unset !important;
         left: unset !important;

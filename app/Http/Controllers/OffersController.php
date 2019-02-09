@@ -11,14 +11,28 @@ use Redirect;
 
 class OffersController extends Controller
 {
-    public function index(){
-        $offers = Offer::with('users')
-                    ->where('status', 1)
-                    ->orderBy('created_at', 'DESC')
-                    ->paginate(5);
+    public function index(Request $request){
+
+        if($request->session()->get('country') == "PL"){
+            $offers = Offer::with('users')
+                ->where([['status', 1], ['country', 'PL']])
+                ->orderBy('created_at', 'DESC')
+                ->paginate(5);
+
+        }else if($request->session()->get('country') == "UK"){
+            $offers = Offer::with('users')
+                ->where([['status', 1], ['country', 'UK']])
+                ->orderBy('created_at', 'DESC')
+                ->paginate(5);
+
+        }else{
+            $offers = Offer::with('users')
+                ->where([['status', 1], ['country', 'USA']])
+                ->orderBy('created_at', 'DESC')
+                ->paginate(5);
+        }
 
        return view('offers')->with('offersList', $offers);
-       //return $offers;
     }
 
     public function updateOffer(Request $request){
@@ -64,6 +78,8 @@ class OffersController extends Controller
         $country = $request->country;
         $type = $request->type;
         $status = $request->status;
+        $price = $request->price;
+        $currency = $request->currency;
         $confirmed_brand = $request->confirmed_brand;
 
         $checkIfOfferExists = Offer::where('page_url', '=', $page_url)->first();
@@ -82,6 +98,8 @@ class OffersController extends Controller
             $offer->country = $country;
             $offer->type = $type;
             $offer->status = $status;
+            $offer->price = $price;
+            $offer->currency = $currency;
             $offer->confirmed_brand = $confirmed_brand;
     
             $offer->save();
@@ -104,12 +122,6 @@ class OffersController extends Controller
         $lowerPrice = $request['priceRangeSendToFormLower'] ? (int)$request['priceRangeSendToFormLower'] : 0;
         $upperPrice = $request['priceRangeSendToFormUpper'] ? (int)$request['priceRangeSendToFormUpper'] : 3000;
 
-        /*if(!$location && !$FlightsCheck && !$VacationsCheck && !$HotelsCheck){
-            return Redirect::to('offers');
-        } else{
-            return Redirect::to('offers/' . $location . '/' . $FlightsCheck . '/' . $VacationsCheck . '/' . $HotelsCheck . '/' . $lowerPrice . '/' . $upperPrice);
-        }*/
-
         return Redirect::to('offers/' . $location . '/' . $FlightsCheck . '/' . $VacationsCheck . '/' . $HotelsCheck . '/' . $lowerPrice . '/' . $upperPrice);
     }
 
@@ -124,12 +136,17 @@ class OffersController extends Controller
         }
         
         return redirect()->to($previousUrl . '?' . http_build_query(['page'=>$page]));
-
-        //return Redirect::back()->with('page', $page);
     }
 
-    public function OffersWithParameters($location, $FlightsCheck, $VacationsCheck, $HotelsCheck, $lowerPrice, $upperPrice){
+    public function OffersWithParameters(Request $request, $location, $FlightsCheck, $VacationsCheck, $HotelsCheck, $lowerPrice, $upperPrice){
        
+        if($request->session()->get('country') == "PL"){
+            $country = "PL";
+        }else if($request->session()->get('country') == "UK"){
+            $country = "UK";
+        }else{
+            $country = "USA";
+        }
        
         //if location exists
         if($location != '0' && $FlightsCheck && !$VacationsCheck && !$HotelsCheck){
@@ -138,6 +155,7 @@ class OffersController extends Controller
                                     ['status', 1], 
                                     ['title', 'like', '%' . $location . '%'], 
                                     ['type', 'Flights'],
+                                    ['country', $country],
                                     ['price', '>=', (int)$lowerPrice],
                                     ['price', '<=', (int)$upperPrice]
                                 ])
@@ -150,6 +168,7 @@ class OffersController extends Controller
                                     ['status', 1], 
                                     ['title', 'like', '%' . $location . '%'], 
                                     ['type', 'Vacations'],
+                                    ['country', $country],
                                     ['price', '>=', (int)$lowerPrice],
                                     ['price', '<=', (int)$upperPrice]
                                 ])
@@ -174,6 +193,7 @@ class OffersController extends Controller
                                     ['status', 1], 
                                     ['title', 'like', '%' . $location . '%'], 
                                     ['type', 'Flights'],
+                                    ['country', $country],
                                     ['price', '>=', (int)$lowerPrice],
                                     ['price', '<=', (int)$upperPrice]
                                 ])
@@ -181,6 +201,7 @@ class OffersController extends Controller
                                     ['status', 1], 
                                     ['title', 'like', '%' . $location . '%'], 
                                     ['type', 'Vacations'],
+                                    ['country', $country],
                                     ['price', '>=', (int)$lowerPrice],
                                     ['price', '<=', (int)$upperPrice]
                                 ])
@@ -193,6 +214,7 @@ class OffersController extends Controller
                                     ['status', 1], 
                                     ['title', 'like', '%' . $location . '%'], 
                                     ['type', 'Flights'],
+                                    ['country', $country],
                                     ['price', '>=', (int)$lowerPrice],
                                     ['price', '<=', (int)$upperPrice]
                                 ])
@@ -200,6 +222,7 @@ class OffersController extends Controller
                                     ['status', 1], 
                                     ['title', 'like', '%' . $location . '%'], 
                                     ['type', 'Accomodation'],
+                                    ['country', $country],
                                     ['price', '>=', (int)$lowerPrice],
                                     ['price', '<=', (int)$upperPrice]
                                 ])
@@ -212,6 +235,7 @@ class OffersController extends Controller
                                     ['status', 1], 
                                     ['title', 'like', '%' . $location . '%'], 
                                     ['type', 'Vacations'],
+                                    ['country', $country],
                                     ['price', '>=', (int)$lowerPrice],
                                     ['price', '<=', (int)$upperPrice]
                                 ])
@@ -229,6 +253,7 @@ class OffersController extends Controller
                                 ->where([
                                     ['status', 1], 
                                     ['title', 'like', '%' . $location . '%'],
+                                    ['country', $country],
                                     ['price', '>=', (int)$lowerPrice],
                                     ['price', '<=', (int)$upperPrice]
                                 ])
@@ -239,6 +264,7 @@ class OffersController extends Controller
                                 ->where([
                                     ['status', 1], 
                                     ['title', 'like', '%' . $location . '%'],
+                                    ['country', $country],
                                     ['price', '>=', (int)$lowerPrice],
                                     ['price', '<=', (int)$upperPrice]
                                 ])
@@ -252,6 +278,7 @@ class OffersController extends Controller
                                 ->where([
                                     ['status', 1],  
                                     ['type', 'Flights'],
+                                    ['country', $country],
                                     ['price', '>=', (int)$lowerPrice],
                                     ['price', '<=', (int)$upperPrice]
                                 ])
@@ -263,6 +290,7 @@ class OffersController extends Controller
                                 ->where([
                                     ['status', 1],
                                     ['type', 'Vacations'],
+                                    ['country', $country],
                                     ['price', '>=', (int)$lowerPrice],
                                     ['price', '<=', (int)$upperPrice]
                                 ])
@@ -274,6 +302,7 @@ class OffersController extends Controller
                                 ->where([
                                     ['status', 1], 
                                     ['type', 'Accomodation'],
+                                    ['country', $country],
                                     ['price', '>=', (int)$lowerPrice],
                                     ['price', '<=', (int)$upperPrice]
                                 ])
@@ -285,12 +314,14 @@ class OffersController extends Controller
                                 ->where([
                                     ['status', 1],
                                     ['type', 'Flights'],
+                                    ['country', $country],
                                     ['price', '>=', (int)$lowerPrice],
                                     ['price', '<=', (int)$upperPrice]
                                 ])
                                 ->orWhere([
                                     ['status', 1], 
                                     ['type', 'Vacations'],
+                                    ['country', $country],
                                     ['price', '>=', (int)$lowerPrice],
                                     ['price', '<=', (int)$upperPrice]
                                 ])
@@ -302,12 +333,14 @@ class OffersController extends Controller
                                 ->where([
                                     ['status', 1], 
                                     ['type', 'Flights'],
+                                    ['country', $country],
                                     ['price', '>=', (int)$lowerPrice],
                                     ['price', '<=', (int)$upperPrice]
                                 ])
                                 ->orWhere([
                                     ['status', 1], 
                                     ['type', 'Accomodation'],
+                                    ['country', $country],
                                     ['price', '>=', (int)$lowerPrice],
                                     ['price', '<=', (int)$upperPrice]
                                 ])
@@ -319,12 +352,14 @@ class OffersController extends Controller
                                 ->where([
                                     ['status', 1], 
                                     ['type', 'Vacations'],
+                                    ['country', $country],
                                     ['price', '>=', (int)$lowerPrice],
                                     ['price', '<=', (int)$upperPrice]
                                 ])
                                 ->orWhere([
                                     ['status', 1], 
                                     ['type', 'Accomodation'],
+                                    ['country', $country],
                                     ['price', '>=', (int)$lowerPrice],
                                     ['price', '<=', (int)$upperPrice]
                                 ])
@@ -334,6 +369,7 @@ class OffersController extends Controller
             $offers = Offer::with('users')
                                 ->where([
                                     ['status', 1], 
+                                    ['country', $country],
                                     ['price', '>=', (int)$lowerPrice],
                                     ['price', '<=', (int)$upperPrice]
                                 ])
@@ -343,6 +379,7 @@ class OffersController extends Controller
             $offers = Offer::with('users')
                                 ->where([
                                     ['status', 1], 
+                                    ['country', $country],
                                     ['price', '>=', (int)$lowerPrice],
                                     ['price', '<=', (int)$upperPrice]
                                 ])

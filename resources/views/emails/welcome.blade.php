@@ -570,7 +570,7 @@ div.cke_pagebreak{background:url(https://cdn-ckeditor.stripo.email/4.4.8/full/pl
         <tbody> 
          <tr> 
           <td class="esd-stripe esd-frame esdev-disable-select esd-hover" align="center">
-                <div class="esd-structure-type">Stripe - Header</div>
+               
                 <div class="esd-block-btn" style="">
                     <div class="esd-more"><a><span class="es-icon-dot-3"></span></a></div>
                     
@@ -661,7 +661,7 @@ div.cke_pagebreak{background:url(https://cdn-ckeditor.stripo.email/4.4.8/full/pl
             <tbody class="ui-droppable"> 
              <tr class="ui-draggable"> 
               <td class="esd-structure es-p20b es-p20r es-p20l esd-frame esdev-disable-select esd-hover" style="padding-top: 20px;background: #fff;" align="left">
-                <div class="esd-structure-type">Structure</div>
+               
                 <div class="esd-block-btn" style="">
                     <div class="esd-more"><a><span class="es-icon-dot-3"></span></a></div>
                     
@@ -683,7 +683,7 @@ div.cke_pagebreak{background:url(https://cdn-ckeditor.stripo.email/4.4.8/full/pl
                 <tbody class="ui-droppable"> 
                  <tr class="ui-draggable"> 
                   <td width="560" class="esd-container-frame esd-frame esdev-disable-select esd-hover" align="center" valign="top">
-                <div class="esd-structure-type">Container</div>
+                
                 <div class="esd-block-btn" style="">
                     <div class="esd-more"><a><span class="es-icon-dot-3"></span></a></div>
                     
@@ -740,7 +740,7 @@ div.cke_pagebreak{background:url(https://cdn-ckeditor.stripo.email/4.4.8/full/pl
         <tbody> 
          <tr> 
           <td class="esd-stripe esd-frame esdev-disable-select esd-hover" align="center">
-                <div class="esd-structure-type">Stripe - Content</div>
+               
                 <div class="esd-block-btn ">
                     <div class="esd-more"><a><span class="es-icon-dot-3"></span></a></div>
                     
@@ -831,7 +831,7 @@ div.cke_pagebreak{background:url(https://cdn-ckeditor.stripo.email/4.4.8/full/pl
             <tbody class="ui-droppable"> 
              <tr class="ui-draggable"> 
               <td class="esd-structure es-p20 esd-frame esdev-disable-select esd-hover" style="padding-left: 0 !important; padding-right: 0 !important;"  align="left" esd-img-prev-src="" esd-img-prev-position="center top" style="background-position: center top;">
-                <div class="esd-structure-type">Structure</div>
+               
                 <div class="esd-block-btn ">
                     <div class="esd-more"><a><span class="es-icon-dot-3"></span></a></div>
                     
@@ -853,7 +853,7 @@ div.cke_pagebreak{background:url(https://cdn-ckeditor.stripo.email/4.4.8/full/pl
                 <tbody class="ui-droppable"> 
                  <tr class="ui-draggable"> 
                   <td width="560" class="esd-container-frame esd-frame esdev-disable-select esd-hover" align="center" valign="top">
-                <div class="esd-structure-type">Container</div>
+              
                 <div class="esd-block-btn" style="">
                     <div class="esd-more"><a><span class="es-icon-dot-3"></span></a></div>
                     
@@ -877,7 +877,7 @@ div.cke_pagebreak{background:url(https://cdn-ckeditor.stripo.email/4.4.8/full/pl
                       <td align="left" class="esd-block-text es-p15b esd-frame esd-block esd-hover esdev-enable-select" contenteditable="true">
                 
                 
-                 <h2 style="text-align: center;">Welcome to Last Bee!</h2> <div class="esd-block-btn" style="">
+                 <div class="esd-block-btn" style="">
                     <div class="esd-more"><a><span class="es-icon-dot-3"></span></a></div>
                     
                     
@@ -910,7 +910,7 @@ div.cke_pagebreak{background:url(https://cdn-ckeditor.stripo.email/4.4.8/full/pl
                     </div>
                 </div>
                 
-    <p style="text-align: center;"><br></p>
+    <p style="text-align: center;">Welcome to Last Bee!</p>
     <p style="text-align: center;">By creating an account, you got access to travel deals.</p>
     <p style="text-align: center;"><strong>Enjoy!</strong></p>
     <p style="text-align: center;"><strong></strong></p>
@@ -938,7 +938,7 @@ div.cke_pagebreak{background:url(https://cdn-ckeditor.stripo.email/4.4.8/full/pl
         <tbody> 
          <tr> 
           <td class="esd-stripe esd-frame esdev-disable-select esd-hover" align="center">
-                <div class="esd-structure-type">Stripe - Content</div>
+               
                 <div class="esd-block-btn" style="">
                     <div class="esd-more"><a><span class="es-icon-dot-3"></span></a></div>
                     
@@ -1029,7 +1029,7 @@ div.cke_pagebreak{background:url(https://cdn-ckeditor.stripo.email/4.4.8/full/pl
             <tbody class="ui-droppable"> 
              <tr class="ui-draggable"> 
               <td class="esd-structure es-p20t es-p20r es-p20l esd-frame esdev-disable-select esd-hover" align="left">
-                <div class="esd-structure-type">Structure</div>
+              
                 <div class="esd-block-btn ">
                     <div class="esd-more"><a><span class="es-icon-dot-3"></span></a></div>
                     
@@ -1051,7 +1051,7 @@ div.cke_pagebreak{background:url(https://cdn-ckeditor.stripo.email/4.4.8/full/pl
                 <tbody class="ui-droppable"> 
                  <tr class="ui-draggable"> 
                   <td width="560" class="esd-container-frame esd-frame esdev-disable-select esd-hover" align="center" valign="top">
-                <div class="esd-structure-type">Container</div>
+               
                 <div class="esd-block-btn" style="">
                     <div class="esd-more"><a><span class="es-icon-dot-3"></span></a></div>
                     
@@ -1075,7 +1075,7 @@ div.cke_pagebreak{background:url(https://cdn-ckeditor.stripo.email/4.4.8/full/pl
                       <td align="left" class="esd-block-text es-p20b esd-frame esd-block esdev-disable-select esd-hover" contenteditable="true">
                 
                 
-                 <h2 style="text-align: center;">Offers Types</h2> <div class="esd-block-btn ">
+                 <h2 style="text-align: center;">Offer Types</h2> <div class="esd-block-btn ">
                     <div class="esd-more"><a><span class="es-icon-dot-3"></span></a></div>
                     
                     
@@ -1099,7 +1099,7 @@ div.cke_pagebreak{background:url(https://cdn-ckeditor.stripo.email/4.4.8/full/pl
              </tr> 
              <tr class="ui-draggable"> 
               <td class="esd-structure es-p20 esd-frame esdev-disable-select esd-hover" style="padding-bottom: 50px !important;" align="left" esd-img-prev-src="" esd-img-prev-position="center top" style="background-position: center top;">
-                <div class="esd-structure-type">Structure</div>
+            
                 <div class="esd-block-btn ">
                     <div class="esd-more"><a><span class="es-icon-dot-3"></span></a></div>
                     
@@ -1122,7 +1122,7 @@ div.cke_pagebreak{background:url(https://cdn-ckeditor.stripo.email/4.4.8/full/pl
                 <tbody class="ui-droppable"> 
                  <tr class="ui-draggable"> 
                   <td width="174" class="es-m-p0r es-m-p20b esd-container-frame esd-frame esdev-disable-select esd-hover" align="center">
-                <div class="esd-structure-type">Container</div>
+              
                 <div class="esd-block-btn ">
                     <div class="esd-more"><a><span class="es-icon-dot-3"></span></a></div>
                     
@@ -1212,7 +1212,7 @@ div.cke_pagebreak{background:url(https://cdn-ckeditor.stripo.email/4.4.8/full/pl
                 <tbody class="ui-droppable"> 
                  <tr class="ui-draggable"> 
                   <td width="173" class="es-m-p20b esd-container-frame esd-frame esdev-disable-select esd-hover" align="center">
-                <div class="esd-structure-type">Container</div>
+               
                 <div class="esd-block-btn" style="">
                     <div class="esd-more"><a><span class="es-icon-dot-3"></span></a></div>
                     
@@ -1302,7 +1302,7 @@ div.cke_pagebreak{background:url(https://cdn-ckeditor.stripo.email/4.4.8/full/pl
                 <tbody class="ui-droppable"> 
                  <tr class="ui-draggable"> 
                   <td width="173" align="center" class="esd-container-frame esd-frame esdev-disable-select esd-hover">
-                <div class="esd-structure-type">Container</div>
+              
                 <div class="esd-block-btn" style="">
                     <div class="esd-more"><a><span class="es-icon-dot-3"></span></a></div>
                     
@@ -1366,7 +1366,7 @@ div.cke_pagebreak{background:url(https://cdn-ckeditor.stripo.email/4.4.8/full/pl
                       <td align="left" class="esd-block-text esd-frame esd-block esdev-disable-select esd-hover" contenteditable="true">
                 
                 
-                 <p>​You have planned some trip. You have flights tickets and looking for some place to stay? Find the best accomodation&nbsp;offers on last-bee.com</p> <div class="esd-block-btn" style="">
+                 <p>​You have planned some trip. You have flights tickets and looking for some place to stay? Find the best accomodation&nbsp;offers on Last Bee</p> <div class="esd-block-btn" style="">
                     <div class="esd-more"><a><span class="es-icon-dot-3"></span></a></div>
                     
                     
@@ -1398,7 +1398,7 @@ div.cke_pagebreak{background:url(https://cdn-ckeditor.stripo.email/4.4.8/full/pl
         <tbody> 
          <tr> 
           <td class="esd-stripe esd-frame esdev-disable-select esd-hover" align="center">
-                <div class="esd-structure-type">Stripe - Content</div>
+               
                 <div class="esd-block-btn ">
                     <div class="esd-more"><a><span class="es-icon-dot-3"></span></a></div>
                     
@@ -1492,7 +1492,7 @@ div.cke_pagebreak{background:url(https://cdn-ckeditor.stripo.email/4.4.8/full/pl
                 <tbody class="ui-droppable"> 
                  <tr class="ui-draggable">
                     <td class="esd-structure es-p20t es-p20r es-p20l esd-frame esdev-disable-select" align="left" style="background-position: center top; margin-top: 30px;border-top: 5px solid #cecece;" esd-img-prev-src="" esd-img-prev-position="center top">
-                    <div class="esd-structure-type">Structure</div>
+                   
                     <div class="esd-block-btn ">
                         <div class="esd-more"><a><span class="es-icon-dot-3"></span></a></div>
                         
@@ -1517,7 +1517,7 @@ div.cke_pagebreak{background:url(https://cdn-ckeditor.stripo.email/4.4.8/full/pl
             <tbody class="ui-droppable">
                 <tr class="ui-draggable">
                     <td width="560" class="esd-container-frame esd-frame esdev-disable-select esd-hover" align="center" valign="top">
-                    <div class="esd-structure-type">Container</div>
+                   
                     <div class="esd-block-btn" style="">
                         <div class="esd-more"><a><span class="es-icon-dot-3"></span></a></div>
                         
@@ -1573,7 +1573,7 @@ div.cke_pagebreak{background:url(https://cdn-ckeditor.stripo.email/4.4.8/full/pl
     </td>
                 </tr><tr class="ui-draggable">
                     <td class="esd-structure esd-frame esdev-disable-select es-p20t es-p20r es-p20l esd-hover" align="left">
-                    <div class="esd-structure-type">Structure</div>
+                  
                     <div class="esd-block-btn" style="">
                         <div class="esd-more"><a><span class="es-icon-dot-3"></span></a></div>
                         
@@ -1594,7 +1594,7 @@ div.cke_pagebreak{background:url(https://cdn-ckeditor.stripo.email/4.4.8/full/pl
                         <table cellpadding="0" cellspacing="0" width="100%">
                             <tbody class="ui-droppable"><tr class="ui-draggable">
                                 <td width="560" class="esd-container-frame esd-frame esdev-disable-select esd-hover" align="center" valign="top">
-                    <div class="esd-structure-type">Container</div>
+                   
                     <div class="esd-block-btn ">
                         <div class="esd-more"><a><span class="es-icon-dot-3"></span></a></div>
                         
@@ -1643,7 +1643,7 @@ div.cke_pagebreak{background:url(https://cdn-ckeditor.stripo.email/4.4.8/full/pl
                     </td>
                 </tr><tr class="ui-draggable">
                     <td class="esd-structure es-p20t es-p20r es-p20l esd-frame esdev-disable-select esd-hover" align="left" esd-img-prev-src="" esd-img-prev-position="center top" style="background-position: center top;">
-                    <div class="esd-structure-type">Structure</div>
+                 
                     <div class="esd-block-btn ">
                         <div class="esd-more"><a><span class="es-icon-dot-3"></span></a></div>
                         
@@ -1667,7 +1667,7 @@ div.cke_pagebreak{background:url(https://cdn-ckeditor.stripo.email/4.4.8/full/pl
                         <table cellpadding="0" cellspacing="0" width="100%">
                             <tbody class="ui-droppable"><tr class="ui-draggable">
                                 <td width="560" class="esd-container-frame esd-frame esdev-disable-select esd-hover" align="center" valign="top">
-                    <div class="esd-structure-type">Container</div>
+                 
                     <div class="esd-block-btn" style="">
                         <div class="esd-more"><a><span class="es-icon-dot-3"></span></a></div>
                         

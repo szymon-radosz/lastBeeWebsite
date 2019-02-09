@@ -24,12 +24,28 @@ class VotesController extends Controller
     
             if($check == 0){
                 $offer->users()->attach($user_id);
-                Session::flash('message', "Thank you. You added a vote.");
+
+                if($request->session()->get('country') == "PL"){
+                    Session::flash('message', "Dziękujemy za oddanie głosu.");
+                }else{
+                    Session::flash('message', "Thank you. You added a vote.");
+                }
+                
             }else{
-                Session::flash('message', "You added a vote in the past, but thank you for action.");
+                
+                if($request->session()->get('country') == "PL"){
+                    Session::flash('message', "Głos na wybraną ofertę był już oddany. Dziękujemy.");
+                }else{
+                    Session::flash('message', "You added a vote in the past, but thank you for action.");
+                }
+
             }
         }else{
-            Session::flash('message', "You need sign in to add votes.");
+            if($request->session()->get('country') == "PL"){
+                Session::flash('message', "Musisz się zalogować, aby głosować na oferty.");
+            }else{
+                Session::flash('message', "You need sign in to add votes.");
+            }
         }
 
         return redirect()->back();

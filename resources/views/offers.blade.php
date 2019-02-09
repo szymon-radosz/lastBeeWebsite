@@ -12,70 +12,123 @@
 
 <div class="homePageContainer">
     <div class="row landingSearchSection offersSearchSection">
-        <div class="col-sm-12 landingSearchSectionHeaderText">
-            <h2 class="">Find offers fit for you</h2>
-        </div>
+            <div class="col-sm-12 landingSearchSectionHeaderText">
+                @if(Session::get('country') == 'PL')
+                    <h2>Znajdź oferty dla siebie</h2>
+                @else
+                    <h2>Find offers fit for you</h2>
+                @endif  
 
-        {{ Form::open(array('action' => array('OffersController@findOffers'))) }}
-        <div class="row landingSearchSectionBtnOptions">
-            <p class="landingSearchSectionHelper">1. Select offers type/types.</p>
-            <div class="landingSearchSectionBtnOptionsContainer">
+            </div>
 
-                <div class="landingSearchCheckboxes">
-                    {{ Form::checkbox('FlightsCheck', null, null, array('id' => 'FlightsCheckId')) }} 
-                    {{ Form::checkbox('VacationsCheck', null, null, array('id' => 'VacationsCheckId')) }} 
-                    {{ Form::checkbox('HotelsCheck', null, null, array('id' => 'HotelsCheckId')) }} 
-                </div>
+            {{ Form::open(array('action' => array('OffersController@findOffers'))) }}
+            <div class="row landingSearchSectionBtnOptions">
+                @if(Session::get('country') == 'PL')
+                    <p class="landingSearchSectionHelper">1. Wybierz kategorie</p>
+                @else
+                    <p class="landingSearchSectionHelper">1. Select category</p>
+                @endif 
 
-                <div class="col-sm-4 landingSearchOptionIconContainer" id="FlightRectLanding">
-                    <div class="landingSearchOptionIconWrapper"> 
-                        <img src="/img/airplane.png" />
-                        <p>Flights</p>
+                <div class="landingSearchSectionBtnOptionsContainer">
+
+                    <div class="landingSearchCheckboxes">
+                        {{ Form::checkbox('FlightsCheck', null, null, array('id' => 'FlightsCheckId')) }} 
+                        {{ Form::checkbox('VacationsCheck', null, null, array('id' => 'VacationsCheckId')) }} 
+                        {{ Form::checkbox('HotelsCheck', null, null, array('id' => 'HotelsCheckId')) }} 
                     </div>
-                </div>
 
-                <div class="col-sm-4 landingSearchOptionIconContainer" id="VacationsRectLanding">
-                    <div class="landingSearchOptionIconWrapper"> 
-                        <img src="/img/sunset.png"  />
-                        <p>Vacations</p>
+                    <div class="col-sm-4 landingSearchOptionIconContainer" id="FlightRectLanding">
+                        <div class="landingSearchOptionIconWrapper"> 
+                            <img src="/img/airplane.png" />
+                            
+                                @if(Session::get('country') == 'PL')
+                                    <p>Loty</p>
+                                @else
+                                    <p>Flights</p>
+                                @endif 
+                        </div>
                     </div>
-                </div>
 
-                <div class="col-sm-4 landingSearchOptionIconContainer" id="HotelsRectLanding">
-                    <div class="landingSearchOptionIconWrapper"> 
-                        <img src="/img/hotel.png" />
-                        <p>Hotels</p>
+                    <div class="col-sm-4 landingSearchOptionIconContainer" id="VacationsRectLanding">
+                        <div class="landingSearchOptionIconWrapper"> 
+                            <img src="/img/sunset.png"/>
+
+                                @if(Session::get('country') == 'PL')
+                                    <p>Wakacje</p>
+                                @else
+                                    <p>Vacations</p>
+                                @endif 
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 landingSearchOptionIconContainer" id="HotelsRectLanding">
+                        <div class="landingSearchOptionIconWrapper"> 
+                            <img src="/img/hotel.png" />
+                            
+                                @if(Session::get('country') == 'PL')
+                                    <p>Hotele</p>
+                                @else
+                                    <p>Hotels</p>
+                                @endif 
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="col-sm-12 landingSearchSectionLocationInput">
-            <p class="landingSearchSectionHelper">2. Write down interesting location. (optional)</p>
-            <div class="form-group">
-                <!--<input type="text" class="form-control" id="usr" placeholder="Location">-->
+            <div class="col-sm-12 landingSearchSectionLocationInput">
+               
+                    @if(Session::get('country') == 'PL')
+                        <p class="landingSearchSectionHelper">2. Napisz interesującą Ciebie lokalizację (opcjonalnie)</p>
+                    @else
+                        <p class="landingSearchSectionHelper">2. Write down interesting location (optional)</p>
+                    @endif 
+                <div class="form-group">
 
-                {{ Form::text('locationInput', null, array('class' => 'form-control', 'placeholder' => 'Location')) }}
+                    @if(Session::get('country') == 'PL')
+                        {{ Form::text('locationInput', null, array('class' => 'form-control', 'placeholder' => 'Lokalizacja')) }}
+                    @else
+                        {{ Form::text('locationInput', null, array('class' => 'form-control', 'placeholder' => 'Location')) }}
+                    @endif 
 
+                </div>
             </div>
-        </div>
 
-        <div class="col-sm-12 landingSearchSectionLocationInput">
-            <p class="landingSearchSectionHelper">3. Select interesting price range.</p>
+            <div class="col-sm-12 landingSearchSectionLocationInput">
+            
+
+            @if(Session::get('country') == 'PL')
+                <p class="landingSearchSectionHelper">3. Wybierz przedział cenowy</p>
+            @else
+                <p class="landingSearchSectionHelper">3. Select interesting price range</p>
+            @endif 
+
             <div class="form-group">
                 <div id="rangeSlider"></div>
 
                 <div class="priceRange priceRangeTop">
-                    <p class="rangeHeader">From: </p>
-                    <div id="priceRangeSendDisplayOnViewLower"></div>
-                    <p>$</p>
-
+                    @if(Session::get('country') == 'PL')
+                        <p class="rangeHeader">Od: </p>
+                        <div id="priceRangeSendDisplayOnViewLower"></div>
+                        <p>zł</p>
+                    @else
+                        <p class="rangeHeader">From: </p>
+                        <div id="priceRangeSendDisplayOnViewLower"></div>
+                        <p>$</p>
+                    @endif 
+                    
                     {{ Form::text('priceRangeSendToFormLower', '100', array('id' => 'priceRangeSendToFormLower')) }}
                 </div>
                 <div class="priceRange">
-                    <p class="rangeHeader">To: </p>
-                    <div id="priceRangeSendDisplayOnViewUpper"></div>
-                    <p>$</p>
+                    
+                    @if(Session::get('country') == 'PL')
+                        <p class="rangeHeader">Do: </p>
+                        <div id="priceRangeSendDisplayOnViewUpper"></div>
+                        <p>zł</p>
+                    @else
+                        <p class="rangeHeader">To: </p>
+                        <div id="priceRangeSendDisplayOnViewUpper"></div>
+                        <p>$</p>
+                    @endif 
 
                     {{ Form::text('priceRangeSendToFormUpper', '3000', array('id' => 'priceRangeSendToFormUpper')) }}
                 </div>
@@ -84,8 +137,14 @@
         </div>
 
         <div class="col-sm-12 landingSearchSectionSearchBtn">
-            <p class="landingSearchSectionHelper">4. Search through all offers.</p>
-            <button type="submit" class="btn landingSearchSectionBtn">Search</button>
+            <!--<p class="landingSearchSectionHelper">4. Search through all offers.</p>-->
+
+            @if(Session::get('country') == 'PL')
+                <button type="submit" class="btn landingSearchSectionBtn">Szukaj</button>
+            @else
+                <button type="submit" class="btn landingSearchSectionBtn">Search</button>
+            @endif 
+
         </div>
         {{ Form::close() }}
     </div>
@@ -100,21 +159,45 @@
                                 <div class="imageContainer">
                                     <img src="/img/airplane-white.png" alt="Flights"/>
                                 </div>
-                                <a href="{{ env('APP_ADDRESS') }}/offers/0/1/0/0/0/10000" target="_blank" title="Show Flights Offers"><p>Flights</p></a>
+                                <a href="{{ env('APP_ADDRESS') }}/offers/0/1/0/0/0/10000" target="_blank" title="Show Flights Offers">
+        
+                                    @if(Session::get('country') == 'PL')
+                                        <p>Loty</p>
+                                    @else
+                                        <p>Flights</p>
+                                    @endif 
+
+                                </a>
                             </div>
                         @elseif($offer->type == "Vacations")
                             <div class="OfferType OfferTypeVacations">
                                 <div class="imageContainer">
                                     <img src="/img/sunset.png" alt="Vacations"/>
                                 </div>
-                                <a href="{{ env('APP_ADDRESS') }}/offers/0/0/1/0/0/10000" target="_blank" title="Show Vacations Offers"><p>Vacations</p></a>
+                                <a href="{{ env('APP_ADDRESS') }}/offers/0/0/1/0/0/10000" target="_blank" title="Show Vacations Offers">
+                                    
+                                    @if(Session::get('country') == 'PL')
+                                        <p>Wakacje</p>
+                                    @else
+                                        <p>Vacations</p>
+                                    @endif 
+
+                                </a>
                             </div>
                         @elseif($offer->type == "Accomodation")
                             <div class="OfferType OfferTypeAccomodation">
                                 <div class="imageContainer">
                                     <img src="/img/hotel-white.png" alt="Accomodation"/>
                                 </div>
-                                <a href="{{ env('APP_ADDRESS') }}/offers/0/0/0/1/0/10000" target="_blank" title="Show Hotels Offers"><p>Hotels</p></a>
+                                <a href="{{ env('APP_ADDRESS') }}/offers/0/0/0/1/0/10000" target="_blank" title="Show Hotels Offers">
+                                    
+                                    @if(Session::get('country') == 'PL')
+                                        <p>Hotele</p>
+                                    @else
+                                        <p>Hotels</p>
+                                    @endif 
+
+                                </a>
                             </div>
                         @endif
 
@@ -126,7 +209,15 @@
                                 </div>
                             {{ Form::close() }}
 
-                            <p>{{count($offer->users)}} votes</p>
+                            @if(Session::get('country') == 'PL' && count($offer->users) == 0)
+                                <p>{{count($offer->users)}} głosów</p>
+                            @elseif(Session::get('country') == 'PL' && count($offer->users) == 1)
+                                <p>{{count($offer->users)}} głos</p>
+                            @elseif(Session::get('country') == 'PL')
+                                <p>{{count($offer->users)}} głosy</p>
+                            @else
+                                <p>{{count($offer->users)}} votes</p>
+                            @endif 
                         </div>
 
                         <div class="row homePageOfferItemRow">
@@ -137,31 +228,52 @@
                                 <div>
                                     @if (Auth::check())
                                         <a href={{$offer->page_url}} target="_blank" title="Show More Details">
-                                            <h2 class="offerTitle" onclick="location.href='{{ env('APP_ADDRESS') }}/offers/{{ substr($offer->title, 0, 20) }}/1/1/1/0/10000' ;">{{$offer->title}}</h2>
+                                            <h2 class="offerTitle">{{$offer->title}}</h2>
                                         </a>
                                     @else 
                                         <h2 class="offerTitle">{{$offer->title}}</h2>
                                     @endif
                                     <p class="offerDescription">{{substr($offer->description, 0, 210)}} ...</p>
                                     <div class="homePageOfferItemBtn">
-                                            @if (Auth::check())
-                                                <a href={{$offer->page_url}} target="_blank" title="Show More Details">
-                                                    <div class="btn btn-primary" onclick="location.href='{{ env('APP_ADDRESS') }}/offers/{{ substr($offer->title, 0, 20) }}/1/1/1/0/10000' ;">Visit offer</div>
-                                                </a>
-                                            @else
-                                                <a href="{{ url('register') }}" title="Register for free to get access to offer">
-                                                    <div class="btn btn-primary offerListBtn">Register for free to get access to offer</div>
-                                                </a>
-                                            @endif
-                                        </a>
+
+                                        @if(Session::get('country') == 'PL' && Auth::check())
+                                            <a href={{$offer->page_url}} target="_blank" title="Pokaż szczegóły">
+                                                <div class="btn btn-primary">Pokaż szczegóły</div>
+                                            </a>
+                                        @elseif (Auth::check())
+                                            <a href={{$offer->page_url}} target="_blank" title="Show More Details">
+                                                <div class="btn btn-primary">Visit offer</div>
+                                            </a>
+                                        @elseif (Session::get('country') == 'PL' && !Auth::check())
+                                            <a href="{{ url('register') }}" title="Zarejestruj konto za darmo i zobacz ofertę">
+                                                <div class="btn btn-primary offerListBtn">Zarejestruj się i zobacz ofertę</div>
+                                            </a>
+                                        @elseif (!Auth::check())
+                                            <a href="{{ url('register') }}" title="Register to get access to offer">
+                                                <div class="btn btn-primary offerListBtn">Register to get access to offer</div>
+                                            </a>
+                                        @endif 
+               
                                     </div>
-                                    <p class="offertDate">Added: {{-- date('Y-m-d H:i:s', strtotime($offer->created_at)) --}} {{ date('d M, Y', strtotime($offer->created_at)) }} </p>
+
+                                    @if(Session::get('country') == 'PL')
+                                        <p class="offertDate">Dodano: {{ date('d.m.Y', strtotime($offer->created_at)) }} r.</p>
+                                    @else
+                                        <p class="offertDate">Added: {{ date('d M, Y', strtotime($offer->created_at)) }} </p>
+                                    @endif 
+                                    
                                     @if($offer->brand == "fly4freeUS")
-                                        <a href="https://www.fly4free.com/flight-deals" target="_blank" title="Visit author website"><img src="/img/fly4free.png" class="homePageOfferItemBrandLogo" /></a>
+                                        <a href="https://www.fly4free.com/flights/flight-deals/usa/" target="_blank" title="Visit author website"><img src="/img/fly4free.png" class="homePageOfferItemBrandLogo" /></a>
+                                    @elseif($offer->brand == "fly4freeUK")
+                                        <a href="https://www.fly4free.com/flight-deals/uk/" target="_blank" title="Visit author website"><img src="/img/fly4free.png" class="homePageOfferItemBrandLogo" /></a>
+                                    @elseif($offer->brand == "fly4freePL")
+                                        <a href="https://www.fly4free.pl/" target="_blank" title="Odwiedź stronę po więcej szczegółów"><img src="/img/fly4free.png" class="homePageOfferItemBrandLogo" /></a>
                                     @elseif($offer->brand == "travelPiratesUS")
-                                        <a href="https://www.travelpirates.com/flights" target="_blank" title="Visit author website"><img src="/img/travelPiratesLogo.png" class="homePageOfferItemBrandLogo" /></a>
-                                    @elseif($offer->brand == "secretFlyingUS")
-                                        <a href="https://www.secretflying.com" target="_blank" title="Visit author website"><img src="/img/secretFlyingUS.gif" class="homePageOfferItemBrandLogo" /></a>
+                                        <a href="https://www.travelpirates.com/?utm_medium=internal&utm_source=travelpirates.com&utm_campaign=nondeal_header" target="_blank" title="Visit author website"><img src="/img/travelPiratesLogo.png" class="homePageOfferItemBrandLogo" /></a>
+                                    @elseif($offer->brand == "travelPiratesUK")
+                                        <a href="https://www.holidaypirates.com/?utm_medium=internal&utm_source=travelpirates.com&utm_campaign=nondeal_header" target="_blank" title="Visit author website"><img src="/img/travelPiratesLogo.png" class="homePageOfferItemBrandLogo" /></a>
+                                    @elseif($offer->brand == "travelPiratesPL")
+                                        <a href="https://www.wakacyjnipiraci.pl/?utm_medium=internal&utm_source=holidaypirates.com&utm_campaign=nondeal_header" target="_blank" title="Odwiedź stronę po więcej szczegółów"><img src="/img/wakacyjniPiraci.png" class="homePageOfferItemBrandLogo" /></a>
                                     @endif
                                 </div>
                             </div>
@@ -174,11 +286,19 @@
 
                     {{ Form::open(array('action' => array('OffersController@paginatorPageResults'), 'class' => 'goToPageForm')) }}
             
-                        <div class="form-group goToPageInput">
-                            {{ Form::text('page', null, array('class' => 'form-control', 'placeholder' => 'Display page ...')) }}
-                        </div>
+                        @if(Session::get('country') == 'PL')
+                            <div class="form-group goToPageInput">
+                                {{ Form::text('page', null, array('class' => 'form-control', 'placeholder' => 'Numer strony ...')) }}
+                            </div>
 
-                        <button type="submit" class="btn paginationSearchBtn">Go</button>
+                            <button type="submit" class="btn paginationSearchBtn">Przejdź</button>
+                        @else
+                            <div class="form-group goToPageInput">
+                                {{ Form::text('page', null, array('class' => 'form-control', 'placeholder' => 'Page number ...')) }}
+                            </div>
+
+                            <button type="submit" class="btn paginationSearchBtn">Go</button>
+                        @endif 
 
                     {{ Form::close() }}
                 </div>
