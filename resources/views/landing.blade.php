@@ -141,6 +141,10 @@
                         <p class="rangeHeader">Od: </p>
                         <div id="priceRangeSendDisplayOnViewLower"></div>
                         <p>zł</p>
+                    @elseif(Session::get('country') == 'UK')
+                        <p class="rangeHeader">From: </p>
+                        <p>£</p>
+                        <div id="priceRangeSendDisplayOnViewLower"></div>
                     @else
                         <p class="rangeHeader">From: </p>
                         <div id="priceRangeSendDisplayOnViewLower"></div>
@@ -155,6 +159,10 @@
                         <p class="rangeHeader">Do: </p>
                         <div id="priceRangeSendDisplayOnViewUpper"></div>
                         <p>zł</p>
+                    @elseif(Session::get('country') == 'UK')
+                        <p class="rangeHeader">To: </p>
+                        <p>£</p>
+                        <div id="priceRangeSendDisplayOnViewUpper"></div>
                     @else
                         <p class="rangeHeader">To: </p>
                         <div id="priceRangeSendDisplayOnViewUpper"></div>
