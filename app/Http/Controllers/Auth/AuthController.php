@@ -87,7 +87,7 @@ class AuthController extends Controller
                 'provider_id' => $user->id
             ]);
 
-            if($request->session()->get('country') == "PL"){
+            if(Session::get('country') == "PL"){
                 Mail::to($user->email)->send(new WelcomeMailPL($user));
             }else{
                 Mail::to($user->email)->send(new WelcomeMail($user));

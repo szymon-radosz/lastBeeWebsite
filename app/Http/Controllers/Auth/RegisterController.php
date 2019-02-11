@@ -10,7 +10,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Mail\WelcomeMail;
 use App\Mail\WelcomeMailPL;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Http\Request;
+use Session;
 
 
 class RegisterController extends Controller
@@ -66,7 +66,7 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data, Request $request)
+    protected function create(array $data)
     {
         $user = User::create([
             'name' => $data['name'],
@@ -75,7 +75,7 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
-        if($request->session()->get('country') == "PL"){
+        if(Session::get('country') == "PL"){
             Mail::to($data['email'])->send(new WelcomeMailPL($user));
         }else{
             Mail::to($data['email'])->send(new WelcomeMail($user));
