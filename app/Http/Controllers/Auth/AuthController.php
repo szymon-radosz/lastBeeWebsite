@@ -7,6 +7,7 @@ use Socialite;
 use App\User;
 use Session;
 use Redirect;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Mail\WelcomeMail;
 use App\Mail\WelcomeMailPL;

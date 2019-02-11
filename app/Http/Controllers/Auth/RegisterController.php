@@ -10,6 +10,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Mail\WelcomeMail;
 use App\Mail\WelcomeMailPL;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Http\Request;
 
 
 class RegisterController extends Controller
