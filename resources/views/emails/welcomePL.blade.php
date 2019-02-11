@@ -914,7 +914,7 @@ div.cke_pagebreak{background:url(https://cdn-ckeditor.stripo.email/4.4.8/full/pl
     <p style="text-align: center;">Korzystaj ze swojego dostępu do wszystkich ofert.</p>
     <p style="text-align: center;"><strong></strong></p>
     <p><br></p>
-    <a href="https://last-bee.com/" target="_blank"><img src="https://last-bee.com/img/lastBeePL.png" style="width: 100%;" class="esd-frame-element esd-hover-element esdev-disable-select"></a>
+    <a href="https://last-bee.com/" target="_blank"><img src="https://last-bee.com/img/lastBeePLMail.png" style="width: 100%;" class="esd-frame-element esd-hover-element esdev-disable-select"></a>
 </td></a></a></a></a></a></a></a></a></a></a></a></a> 
                      </tr> 
                     </tbody> 
@@ -1074,7 +1074,7 @@ div.cke_pagebreak{background:url(https://cdn-ckeditor.stripo.email/4.4.8/full/pl
                       <td align="left" class="esd-block-text es-p20b esd-frame esd-block esdev-disable-select esd-hover" contenteditable="true">
                 
                 
-                 <h2 style="text-align: center;">Offer Types</h2> <div class="esd-block-btn ">
+                 <h2 style="text-align: center;">Oferty</h2> <div class="esd-block-btn ">
                     <div class="esd-more"><a><span class="es-icon-dot-3"></span></a></div>
                     
                     
@@ -1364,7 +1364,7 @@ div.cke_pagebreak{background:url(https://cdn-ckeditor.stripo.email/4.4.8/full/pl
                       <td align="left" class="esd-block-text esd-frame esd-block esdev-disable-select esd-hover" contenteditable="true">
                 
             
-                 <p>​Planujesz swój następny wyjazd. Masz już bilety lotnicze i szukasz najlepszego miejsca, w którym możesz się zatrzymać? Odwiedź last-bee.com i szybko sprawdź interesującą Cię lokalizację. </p> <div class="esd-block-btn" style="">
+                 <p>​Planujesz swój następny wyjazd. Masz już bilety lotnicze i szukasz najlepszego miejsca, w którym możesz się zatrzymać w promocyjnej cenie? Odwiedź last-bee.com i szybko sprawdź interesującą Cię lokalizację. </p> <div class="esd-block-btn" style="">
                     <div class="esd-more"><a><span class="es-icon-dot-3"></span></a></div>
                     
                     

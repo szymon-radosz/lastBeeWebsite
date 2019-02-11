@@ -9,6 +9,7 @@ use Session;
 use Redirect;
 use App\Http\Controllers\Controller;
 use App\Mail\WelcomeMail;
+use App\Mail\WelcomeMailPL;
 use Illuminate\Support\Facades\Mail;
 
 class AuthController extends Controller
@@ -85,8 +86,12 @@ class AuthController extends Controller
                 'provider_id' => $user->id
             ]);
 
-            Mail::to($user->email)->send(new WelcomeMail($user));
-
+            if($request->session()->get('country') == "PL"){
+                Mail::to($user->email)->send(new WelcomeMailPL($user));
+            }else{
+                Mail::to($user->email)->send(new WelcomeMail($user));
+            }
+            
             return $user;
 
         }catch(\Exception $e){

@@ -10706,6 +10706,8 @@ a.text-dark:focus {
   .landingHeaderSection .col-sm-10 h1 {
     top: 35%;
     text-align: center;
+    line-height: 42px;
+    font-size: 32px;
   }
 
   .landingHowItWorksSection .col-sm-8 {
@@ -10774,6 +10776,8 @@ a.text-dark:focus {
 
   .landingHeaderSection .col-sm-10 h1 {
     top: 40%;
+    line-height: 52px;
+    font-size: 38px;
   }
 }
 
@@ -11140,7 +11144,6 @@ a.text-dark:focus {
   transform: translate(-50%, -50%);
   width: 80%;
   color: #fff;
-  font-size: 38px;
   font-weight: 600;
 }
 

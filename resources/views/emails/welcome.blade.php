@@ -915,7 +915,7 @@ div.cke_pagebreak{background:url(https://cdn-ckeditor.stripo.email/4.4.8/full/pl
     <p style="text-align: center;"><strong>Enjoy!</strong></p>
     <p style="text-align: center;"><strong></strong></p>
     <p><br></p>
-    <a href="https://last-bee.com/" target="_blank"><img src="https://last-bee.com/img/lastBee.png" style="width: 100%;" class="esd-frame-element esd-hover-element esdev-disable-select"></a>
+    <a href="https://last-bee.com/" target="_blank"><img src="https://last-bee.com/img/lastBeeMail.png" style="width: 100%;" class="esd-frame-element esd-hover-element esdev-disable-select"></a>
 </td></a></a></a></a></a></a></a></a></a></a></a></a> 
                      </tr> 
                     </tbody> 
