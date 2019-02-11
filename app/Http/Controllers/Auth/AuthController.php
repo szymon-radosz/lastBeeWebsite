@@ -42,17 +42,35 @@ class AuthController extends Controller
             if($authUser != null){
                 try{
                     Auth::login($authUser, true);
-                    Session::flash('message', "Nice to see you.");
+
+                    if(Session::get('country') == "PL"){
+                        Session::flash('message', "Miło Cię widzieć.");
+                    }else{
+                        Session::flash('message', "Nice to see you.");
+                    }
+                    
                     return Redirect::to('offers');
 
                 }catch(\Exception $e){
-                    Session::flash('message', "Can't sign in a user.");
+                    
+                    if(Session::get('country') == "PL"){
+                        Session::flash('message', "Problem z autoryzacją.");
+                    }else{
+                        Session::flash('message', "Problem with authorization.");
+                    }
+
                     return Redirect::to('offers');
 
                 }
                 
             }else{
-                Session::flash('message', "Can't sign in a user.");
+           
+                if(Session::get('country') == "PL"){
+                    Session::flash('message', "Problem z autoryzacją.");
+                }else{
+                    Session::flash('message', "Problem with authorization.");
+                }
+
                 return Redirect::to('offers');
             }
             
