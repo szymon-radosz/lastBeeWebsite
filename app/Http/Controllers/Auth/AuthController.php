@@ -69,7 +69,7 @@ class AuthController extends Controller
     //@param $provider Social auth provider
     //@return  User
      
-    public function findOrCreateUser($user, $provider, Request $request)
+    public function findOrCreateUser($user, $provider)
     {
         $authUser = User::where('provider_id', $user->id)->first();
 
