@@ -102,7 +102,8 @@ class AuthController extends Controller
                 'name'     => $user->name,
                 'email'    => $user->email,
                 'provider' => $provider,
-                'provider_id' => $user->id
+                'provider_id' => $user->id,
+                'country' => Session::get('country')
             ]);
 
             if(Session::get('country') == "PL"){
