@@ -89,25 +89,25 @@
                             
                             @if(Session::get('country') == 'PL')
                                 <div class="col-md-8 offset-md-4 authButtonPanel">
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="btn btn-primary defaultBtn">
                                         {{ __('Załóż konto') }}
                                     </button>
 
                                     <p class="formOr">lub zarejestruj się używając:</p>
 
-                                    <a href="{{ url('api/auth/facebook') }}" class="btn facebookBtn">Facebook</a>
-                                    <a href="{{ url('api/auth/google') }}" class="btn googleBtn">Google</a>
+                                    <a href="{{ url('api/auth/facebook') }}" class="btn facebookBtn"><img src="/img/facebook-logo.png" class="facebookLogo" />Facebook</a>
+                                    <a href="{{ url('api/auth/google') }}" class="btn googleBtn"><img src="/img/google-logo.png" class="googleLogo"/>Google</a>
                                 </div>
                             @else
                                 <div class="col-md-8 offset-md-4 authButtonPanel">
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="btn btn-primary defaultBtn">
                                         {{ __('Register') }}
                                     </button>
 
                                     <p class="formOr">or use</p>
 
-                                    <a href="{{ url('api/auth/facebook') }}" class="btn facebookBtn">Facebook</a>
-                                    <a href="{{ url('api/auth/google') }}" class="btn googleBtn">Google</a>
+                                    <a href="{{ url('api/auth/facebook') }}" class="btn facebookBtn"><img src="/img/facebook-logo.png" class="facebookLogo" />Facebook</a>
+                                    <a href="{{ url('api/auth/google') }}" class="btn googleBtn"><img src="/img/google-logo.png" class="googleLogo"/>Google</a>
                                 </div>
                             @endif
 

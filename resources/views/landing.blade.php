@@ -24,13 +24,13 @@
                 @if (!Auth::check())
                     @if(Session::get('country') == 'PL')
                         <div class="landingHeaderSectionBtnSection">
-                            <a href="{{ url('/login') }}"><button class="btn loginBtn">Logowanie</button></a>
-                            <a href="{{ url('/register') }}"><button class="btn registerBtn">Rejestracja</button></a>
+                            <a href="{{ url('/login') }}"><button class="btn loginBtn defaultBtn">Logowanie</button></a>
+                            <a href="{{ url('/register') }}"><button class="btn registerBtn defaultBtn">Rejestracja</button></a>
                         </div>
                     @else
                         <div class="landingHeaderSectionBtnSection">
-                            <a href="{{ url('/login') }}"><button class="btn loginBtn">Sign In</button></a>
-                            <a href="{{ url('/register') }}"><button class="btn registerBtn">Sign Up</button></a>
+                            <a href="{{ url('/login') }}"><button class="btn loginBtn defaultBtn">Sign In</button></a>
+                            <a href="{{ url('/register') }}"><button class="btn registerBtn defaultBtn">Sign Up</button></a>
                         </div>
                     @endif  
                 @endif

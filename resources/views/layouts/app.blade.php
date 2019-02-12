@@ -155,7 +155,7 @@
         @if(!Session::has('country'))
             <div class="modalBg">
                 <div class="modalContainer">
-                    <h3>Please, select country whose offers we should display for you.</h3>
+                    <h3>Please, select a country.<br />Prosimy wybrać kraj.</h3>
                     <div class="countryContainer">
                         <div class="countryRow">
                             <div class="countryOption">
@@ -208,6 +208,7 @@
         <div class="row footer">
             <div class="col-sm-3 footerCopyright">
                 <p>last-bee.com</p>
+                
                 <div class="footerSocial">
                     <a href="https://www.facebook.com/lastbeecom" target="_blank">
                         <div class="footerSocialOption facebook">
@@ -259,7 +260,10 @@
                 @endif
                 
             </div>
+ 
         </div>
+
+        <p class="copyright">&copy; 2019 last-bee.com. All rights reserved.</p>
     </div>
 
     <!-- Scripts -->

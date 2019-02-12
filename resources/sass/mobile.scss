@@ -39,6 +39,11 @@
         }
     }
 
+    .facebookBtn,
+    .googleBtn {
+        text-align: center;
+    }
+
     .OfferVoteContainer {
         bottom: unset !important;
         left: unset !important;
@@ -85,8 +90,8 @@
             h1 {
                 top: 35%;
                 text-align: center;
-                line-height: 42px;
-                font-size: 32px;
+                line-height: 36px;
+                font-size: 30px;
             }
         }
     }
@@ -147,6 +152,12 @@
     .pagination {
         float: left;
     }
+
+    .facebookBtn,
+    .googleBtn {
+        text-align: right;
+    }
+
     .homePageOfferItemBrandLogo {
         position: absolute;
         bottom: 5px;

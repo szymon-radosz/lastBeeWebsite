@@ -47,10 +47,16 @@
                 height: 50px;
                 margin: 10px;
                 filter: grayscale(100%);
+                -o-transition: 0.5s;
+                -ms-transition: 0.5s;
+                -moz-transition: 0.5s;
+                -webkit-transition: 0.5s;
+                transition: 0.5s;
             }
 
             img:hover {
                 filter: none;
+                cursor: pointer;
             }
 
             button {
@@ -153,10 +159,20 @@
 
             .btn {
                 background-color: $darkYellow;
+                border: 2px solid $darkYellow;
                 color: #000;
                 font-weight: 600;
                 min-width: 200px;
                 border-radius: 30px;
+                -o-transition: 0.5s;
+                -ms-transition: 0.5s;
+                -moz-transition: 0.5s;
+                -webkit-transition: 0.5s;
+                transition: 0.5s;
+            }
+
+            .btn:hover {
+                background-color: #fff;
             }
         }
     }

@@ -246,19 +246,19 @@
 
                                         @if(Session::get('country') == 'PL' && Auth::check())
                                             <a href={{$offer->page_url}} target="_blank" title="Pokaż szczegóły">
-                                                <div class="btn btn-primary">Pokaż szczegóły</div>
+                                                <div class="btn btn-primary defaultBtn">Pokaż szczegóły</div>
                                             </a>
                                         @elseif (Auth::check())
                                             <a href={{$offer->page_url}} target="_blank" title="Show More Details">
-                                                <div class="btn btn-primary">Visit offer</div>
+                                                <div class="btn btn-primary defaultBtn">Visit offer</div>
                                             </a>
                                         @elseif (Session::get('country') == 'PL' && !Auth::check())
                                             <a href="{{ url('register') }}" title="Zarejestruj konto za darmo i zobacz ofertę">
-                                                <div class="btn btn-primary offerListBtn">Zarejestruj się i zobacz ofertę</div>
+                                                <div class="btn btn-primary offerListBtn defaultBtn">Zarejestruj się i zobacz ofertę</div>
                                             </a>
                                         @elseif (!Auth::check())
                                             <a href="{{ url('register') }}" title="Register to get access to offer">
-                                                <div class="btn btn-primary offerListBtn">Register to get access to offer</div>
+                                                <div class="btn btn-primary offerListBtn defaultBtn">Register to get access to offer</div>
                                             </a>
                                         @endif 
                
@@ -299,13 +299,13 @@
                                 {{ Form::text('page', null, array('class' => 'form-control', 'placeholder' => 'Numer strony ...')) }}
                             </div>
 
-                            <button type="submit" class="btn paginationSearchBtn">Przejdź</button>
+                            <button type="submit" class="btn paginationSearchBtn defaultBtn">Przejdź</button>
                         @else
                             <div class="form-group goToPageInput">
                                 {{ Form::text('page', null, array('class' => 'form-control', 'placeholder' => 'Page number ...')) }}
                             </div>
 
-                            <button type="submit" class="btn paginationSearchBtn">Go</button>
+                            <button type="submit" class="btn paginationSearchBtn defaultBtn">Go</button>
                         @endif 
 
                     {{ Form::close() }}

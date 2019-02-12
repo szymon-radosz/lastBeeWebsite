@@ -45,11 +45,11 @@
                             <div class="col-md-6 offset-md-4 authButtonPanel">
                                 
                                 @if(Session::get('country') == 'PL')
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="btn btn-primary defaultBtn">
                                         {{ __('Wyślij link') }}
                                     </button>
                                 @else
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="btn btn-primary defaultBtn">
                                         {{ __('Send Password Reset Link') }}
                                     </button>
                                 @endif 

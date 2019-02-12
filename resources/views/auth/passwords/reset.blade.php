@@ -74,11 +74,11 @@
                                 
 
                                 @if(Session::get('country') == 'PL')
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="btn btn-primary defaultBtn">
                                         {{ __('Resetuj hasło') }}
                                     </button>
                                 @else
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="btn btn-primary defaultBtn">
                                         {{ __('Reset Password') }}
                                     </button>
                                 @endif 
