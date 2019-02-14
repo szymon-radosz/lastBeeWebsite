@@ -39,6 +39,26 @@
         }
     }
 
+    .partnersBestOffersRectCol {
+        margin-bottom: 10px;
+
+        h2 {
+            font-size: 22px;
+        }
+    }
+
+    .partnersBestOffersRectCol:last-child {
+        margin-bottom: 0;
+    }
+
+    .landingPartners {
+        .partnersLogoWrapper {
+            img {
+                width: 95px;
+            }
+        }
+    }
+
     .facebookBtn,
     .googleBtn {
         text-align: center;
@@ -151,6 +171,14 @@
 @media screen and (min-width: 634px) {
     .pagination {
         float: left;
+    }
+
+    .landingPartners {
+        .partnersLogoWrapper {
+            img {
+                width: 150px;
+            }
+        }
     }
 
     .facebookBtn,

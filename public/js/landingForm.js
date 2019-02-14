@@ -2,48 +2,12 @@ window.onload = function() {
     let range = document.getElementById("rangeSlider");
 
     noUiSlider.create(range, {
-        /*range: {
-            min: 0,
-            max: 10000
-        },
-
-        step: 50,
-
-        // Handles start at ...
-        start: [0, 1000],
-
-        // ... must be at least 300 apart
-        margin: 300,
-
-        // ... but no more than 600
-        //limit: 600,
-
-        // Display colored bars between handles
-        connect: true,
-
-        // Put '0' at the bottom of the slider
-        //direction: 'rtl',
-        //orientation: 'vertical',
-
-        // Move handle on tap, bars are draggable
-        behaviour: "tap-drag",
-        tooltips: true,
-        format: wNumb({
-            decimals: 0
-        }),
-
-        // Show a scale with the slider
-        pips: {
-            mode: "steps",
-            stepped: true,
-            density: 4
-        }*/
         range: {
             min: 0,
 
-            max: 3000
+            max: 4500
         },
-        start: [50, 1000],
+        start: [0, 4000],
         // snap: true,
         connect: true,
         step: 50,

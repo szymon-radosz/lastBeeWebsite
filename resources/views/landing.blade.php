@@ -218,15 +218,125 @@
             </div>
         </div>
 
+        <div class="row landingBestOffersSection landingCompanyBestOffers">
+            <div class="col-sm-12 landingBestOffersSectionHeaderText">
+                
+                @if(Session::get('country') == 'PL')
+                    <h2>Najlepsze oferty</h2>
+                    <p>wybrane przez naszą redakcję</p>
+                @else
+                    <h2>Top offers</h2>
+                    <p>chosen by our company</p>
+                @endif 
+            </div>
+
+            <div class="col-sm-10 offset-1 landingBestOffersSectionRect">
+                <div class="row ">
+                    <div class="col-sm-4 landingBestOffersSectionRectCol partnersBestOffersRectCol landingBestOffersSectionRectLeft">
+
+                        @php 
+                            $firstImage = array();
+                            preg_match( '/src="([^"]*)"/i', $todayBestOffers[0]->img_url, $firstImage ) ;
+                        @endphp
+
+                        <div class="fullLandingBestOffersSectionRect" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{$firstImage[1]}}'); ">
+                            
+                            @if (Auth::check())
+                                <a href="{{$todayBestOffers[0]->page_url}}" target="_blank" title="Show More Details">    
+                                    <h2 onclick="location.href='{{ env('APP_ADDRESS') }}/offers/{{ substr($todayBestOffers[0]->title, 0, 20) }}/1/1/1/0/10000' ;">{{$todayBestOffers[0]->title}}</h2>
+                                </a>
+                            @else
+                                <h2>{{$todayBestOffers[0]->title}}</h2>
+                            @endif
+                        </div>
+                    </div>
+                       
+                    <div class="col-sm-4 landingBestOffersSectionRectCol partnersBestOffersRectCol landingBestOffersSectionRectLeft">
+
+                        @php 
+                            $firstImage = array();
+                            preg_match( '/src="([^"]*)"/i', $todayBestOffers[1]->img_url, $firstImage ) ;
+                        @endphp
+
+                        <div class="fullLandingBestOffersSectionRect" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{$firstImage[1]}}'); ">
+                            
+                            @if (Auth::check())
+                                <a href="{{$todayBestOffers[1]->page_url}}" target="_blank" title="Show More Details">    
+                                    <h2 onclick="location.href='{{ env('APP_ADDRESS') }}/offers/{{ substr($todayBestOffers[1]->title, 0, 20) }}/1/1/1/0/10000' ;">{{$todayBestOffers[1]->title}}</h2>
+                                </a>
+                            @else
+                                <h2>{{$todayBestOffers[1]->title}}</h2>
+                            @endif
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 landingBestOffersSectionRectCol partnersBestOffersRectCol landingBestOffersSectionRectLeft">
+
+                        @php 
+                            $firstImage = array();
+                            preg_match( '/src="([^"]*)"/i', $todayBestOffers[2]->img_url, $firstImage ) ;
+                        @endphp
+
+                        <div class="fullLandingBestOffersSectionRect" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{$firstImage[1]}}'); ">
+                            
+                            @if (Auth::check())
+                                <a href="{{$todayBestOffers[2]->page_url}}" target="_blank" title="Show More Details">    
+                                    <h2 onclick="location.href='{{ env('APP_ADDRESS') }}/offers/{{ substr($todayBestOffers[2]->title, 0, 20) }}/1/1/1/0/10000' ;">{{$todayBestOffers[2]->title}}</h2>
+                                </a>
+                            @else
+                                <h2>{{$todayBestOffers[2]->title}}</h2>
+                            @endif
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 landingBestOffersSectionSeeAllText">
+                
+                @if(Session::get('country') == 'PL')
+                    <a class="nav-link" href="{{ url('/offers') }}"><p>Zobacz wszystkie oferty</p></a>
+                @else
+                    <a class="nav-link" href="{{ url('/offers') }}"><p>See all offers</p></a>
+                @endif 
+
+            </div>
+        </div>
+
+        <div class="row landingPartners">
+            <div class="col-sm-12 landingPartnersHeaderText">
+                
+                @if(Session::get('country') == 'PL')
+                    <h2>Partnerzy</h2>
+                @else
+                    <h2>Partners</h2>
+                @endif 
+
+            </div>
+
+            <div class="col-sm-12 landingPartnersLogoSection">
+                <div class="row">
+
+                    <div class="partnersLogoWrapper">
+                        
+                        <img src="/img/fly4freePNG.png" />
+                        <img src="/img/travelPiratesPNG.png" />
+                        
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
         <div class="row landingBestOffersSection">
             <div class="col-sm-12 landingBestOffersSectionHeaderText">
                 
-
                 @if(Session::get('country') == 'PL')
-                    <h2>Najlepsze oferty</h2>
+                    <h2>Ranking ofert</h2>
                     <p>według głosów naszych użytkowników</p>
                 @else
-                    <h2>Best offers</h2>
+                    <h2>Offers ranking</h2>
                     <p>based on our users votes</p>
                 @endif 
             </div>
