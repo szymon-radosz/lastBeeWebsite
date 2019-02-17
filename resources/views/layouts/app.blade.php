@@ -217,7 +217,7 @@
                     </a>
 
                     
-                    <a href="https://www.instagram.com/lastbeecom" target="_blank">
+                    <a href="https://www.instagram.com/last_bee.com_pl/" target="_blank">
                         <div class="footerSocialOption instagram">
                             <img src="/img/instagram.png" />
                         </div>

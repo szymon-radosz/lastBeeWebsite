@@ -13,7 +13,7 @@
                 <p>Last-bee jest serwisem stworzonym, aby pomóc innym osobom w wygodny sposób szukać interesujących turystycznych okazji w jednym miejscu. <strong>Absolutnie za darmo.</strong></p>
 
                 <p>Jesteśmy grupą osób, którzy zawsze lubią dostawać najlepsze oferty na kolejne podróże. 
-                Pośród przeszukiwania wielu stron i ofert chcemy podzielić się z tobą najlepszymi ofertami budując serwis, z którego także Ty mozesz skorzystać podczas szukania biletów lotnicznych na kolejną podróż lub wakacji dla siebie i swoich najbliższych. <strong>Podoba Ci się ten pomysł?</strong></p>
+                Pośród przeszukiwania wielu stron i ofert chcemy podzielić się z tobą najlepszymi ofertami budując serwis, z którego także Ty możesz skorzystać podczas szukania biletów lotniczych na kolejną podróż lub wakacji dla siebie i swoich najbliższych. <strong>Podoba Ci się ten pomysł?</strong></p>
 
                 <p><a href="{{ url('/register') }}">Załóż konto</a> za darmo i zacznij korzystać z <a href="{{ url('/') }}">last-bee.com</a></p>
             </div>

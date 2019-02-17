@@ -1620,7 +1620,7 @@ div.cke_pagebreak{background:url(https://cdn-ckeditor.stripo.email/4.4.8/full/pl
                     
                     
                     
-                        <a href="https://www.facebook.com/lastbeecom/" target="_blank"><img data-cke-saved-src="https://last-bee.com/img/fbFooter.png" src="https://last-bee.com/img/fbFooter.png" style="display: inline-block; margin-left:5px;" width="30" alt=""></a> <a href="https://www.instagram.com/lastbeecom/" target="_blank"><img data-cke-saved-src="https://last-bee.com/img/igFooter.png" src="https://last-bee.com/img/igFooter.png" style="display: inline-block; margin-left:5px;" width="30" alt=""></a>
+                        <a href="https://www.facebook.com/lastbeecom/" target="_blank"><img data-cke-saved-src="https://last-bee.com/img/fbFooter.png" src="https://last-bee.com/img/fbFooter.png" style="display: inline-block; margin-left:5px;" width="30" alt=""></a> <a href="https://www.instagram.com/last_bee.com_pl/" target="_blank"><img data-cke-saved-src="https://last-bee.com/img/igFooter.png" src="https://last-bee.com/img/igFooter.png" style="display: inline-block; margin-left:5px;" width="30" alt=""></a>
                     <div class="esd-block-btn" style="">
                         <div class="esd-more"><a><span class="es-icon-dot-3"></span></a></div>
                         
