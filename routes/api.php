@@ -11,7 +11,9 @@ Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallba
 
 Route::get('offers','DashboardOffersController@index');
 
-Route::get('/getDailyAddedOffers', 'DashboardController@getDailyAddedOffers');
+Route::get('/getDailyAddedOffersUSA', 'DashboardController@getDailyAddedOffersUSA');
+Route::get('/getDailyAddedOffersUK', 'DashboardController@getDailyAddedOffersUK');
+Route::get('/getDailyAddedOffersPL', 'DashboardController@getDailyAddedOffersPL');
 
 Route::post('updateOffer','OffersController@updateOffer');
 
